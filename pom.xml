@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.next-level-integration</groupId>
-    <artifactId>AF40Tpl</artifactId>
+    <artifactId>App3</artifactId>
     <version>1.0.0</version>
 
-    <name>AF40Tpl</name>
+    <name>App3</name>
     <description>Seed starter spring boot application</description>
 
     <parent>

@@ -1,17 +1,17 @@
 kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
-  name: AF40Tpl-deploy
+  name: App3-deploy
 spec:
   replicas: 1
   template:
     metadata:
-      name: AF40Tpl
+      name: App3
       labels:
-        name: AF40Tpl
+        name: App3
     spec:
       containers:
-      - name: AF40Tpl
+      - name: App3
         image: eu.gcr.io/GCP_PROJECT/APP_NAME:1.0.0
         imagePullPolicy: Always
         readinessProbe:
@@ -20,5 +20,5 @@ spec:
           initialDelaySeconds: 10
           timeoutSeconds: 5
         ports:
-        - name: AF40Tpl-http
+        - name: App3-http
           containerPort: 8080
