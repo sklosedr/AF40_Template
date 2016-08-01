@@ -1,17 +1,17 @@
 kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
-  name: App3-deploy
+  name: app3-deploy
 spec:
   replicas: 1
   template:
     metadata:
-      name: App3
+      name: app3
       labels:
-        name: App3
+        name: app3
     spec:
       containers:
-      - name: App3
+      - name: app3
         image: eu.gcr.io/GCP_PROJECT/APP_NAME:1.0.0
         imagePullPolicy: Always
         readinessProbe:
@@ -20,5 +20,5 @@ spec:
           initialDelaySeconds: 10
           timeoutSeconds: 5
         ports:
-        - name: App3-http
+        - name: app3-http
           containerPort: 8080
