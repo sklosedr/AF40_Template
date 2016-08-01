@@ -1,0 +1,24 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: AF40Tpl-deploy
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: AF40Tpl
+      labels:
+        name: AF40Tpl
+    spec:
+      containers:
+      - name: AF40Tpl
+        image: eu.gcr.io/GCP_PROJECT/APP_NAME:1.0.0
+        imagePullPolicy: Always
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 10
+          timeoutSeconds: 5
+        ports:
+        - name: AF40Tpl-http
+          containerPort: 8080
