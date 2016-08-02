@@ -1,0 +1,8 @@
+/target/
+bower_components/
+node_modules/
+.settings/
+.tern-project
+.project
+.classpath
+*.log

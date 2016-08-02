@@ -1,4 +1,4 @@
-package hello;
+package com.nextlevel.fast.track.frontend.market.partner;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
@@ -17,11 +17,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
 
+import com.nextlevel.fast.track.frontend.Application;
+
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application2.class)
+@SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
 @IntegrationTest({"server.port=0"})
-public class HelloControllerIT {
+public class MarketPartnerControllerIntegrationTest {
 
     @Value("${local.server.port}")
     private int port;
@@ -31,13 +33,13 @@ public class HelloControllerIT {
 
 	@Before
 	public void setUp() throws Exception {
-		this.base = new URL("http://localhost:" + port + "/");
+		this.base = new URL("http://localhost:" + port + "/marketPartner");
 		template = new TestRestTemplate();
 	}
 
 	@Test
 	public void getHello() throws Exception {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
-		assertThat(response.getBody(), equalTo("Greetings AF40Tpl from Spring Boot!"));
+		assertThat(response.getBody(), equalTo("marketParnter"));
 	}
 }
