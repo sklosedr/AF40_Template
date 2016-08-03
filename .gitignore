@@ -1,5 +1,5 @@
 /target/
-bower_components/
+_bower_components/
 node_modules/
 .settings/
 .tern-project
