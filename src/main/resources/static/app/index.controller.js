@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('fastTrackApp', ['ngMaterial'])
+        .module('fastTrackApp')
         .controller('IndexController', IndexController);
 
     /** @ngInject */
