@@ -1,19 +1,40 @@
-<md-dialog aria-label="List dialog" ng-controller="BusinessPartnerController as vm" >
+<md-dialog aria-label="List dialog" ng-controller="BusinessPartnerController as businessPartnerCtrl" >
 <md-dialog-content>
-	<h1>;lkasdjf;lkasdjf;lkajsdf;lkajdf</h1>
-	
-	<md-button ng-click="vm.myMethod()">Test</md-button>
 
-<!-- 	<form name="businessPartnerForm"> -->
-<!-- 		<md-stepper id="stepper" -->
-<!-- 			md-mobile-step-text="isMobileStepText" -->
-<!-- 			md-vertical="true" -->
-<!-- 			md-linear="true" -->
-<!-- 			md-alternative="true"> -->
+	<form name="businessPartnerForm">
+            <md-stepper id="stepper"
+                        md-mobile-step-text="$ctrl.isMobileStepText"
+                        md-vertical="$ctrl.isVertical"
+                        md-linear="$ctrl.isLinear"
+                        md-alternative="$ctrl.isAlternative">
 			
-<!-- 		</md-stepper> -->
+				<md-step md-label="Namen angeben">
+					<md-step-body>
+						<p>Wer ist der Geschäftspartner?</p>
+					</md-step-body>
+					<md-step-actions>
+						<md-button class="md-primary" ng-click="$businessPartnerCtrl.cancel();">Abbrechen</md-button>
+						<md-button class="md-primary md-raised" ng-click="$businessPartnerCtrl.secondStep();">Weiter</md-button>
+					</md-step-actions>
+				</md-step>
+				
+				<md-step md-label="Adresse angeben">
+					<md-step-actions>
+						<md-button class="md-primary" ng-click="$businessPartnerCtrl.cancel();">Abbrechen</md-button>
+						<md-button class="md-primary md-raised" ng-click="$businessPartnerCtrl.secondStep();">Weiter</md-button>
+					</md-step-actions>
+				</md-step>
+				
+				<md-step md-label="Eingaben prüfen">
+					<md-step-actions>
+						<md-button class="md-primary" ng-click="$businessPartnerCtrl.cancel();">Abbrechen</md-button>
+						<md-button class="md-primary md-raised" ng-click="$businessPartnerCtrl.secondStep();">Weiter</md-button>
+					</md-step-actions>
+				</md-step>
+			
+		</md-stepper>
 	
-<!-- 	</form> -->
+	</form>
 
 
 </md-dialog-content>

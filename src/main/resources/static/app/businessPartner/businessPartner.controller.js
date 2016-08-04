@@ -11,9 +11,14 @@
     {
     	var that = this;
     	
-    	that.myMethod = function() {
-    		alert('yeah BusinessPartnerController');
+    	that.secondStep = function() {
+    		alert('Second Step');
     	}
+    	
+    	that.cancel = function() {
+    		alert('cancel');
+    	}
+
     }
     
 })();
