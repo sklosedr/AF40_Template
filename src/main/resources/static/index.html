@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de" >
+<head>
+	<meta charset="utf-8"> 
+    <title>FastTrack UI - DemoTemplate</title>
+    
+   
+    
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.9/angular-material.min.css">
+	<style type="text/css">
+	[ng\:cloak], [ng-cloak], .ng-cloak {
+		display: none !important;
+	}
+	</style>
+	<script>document.write('<base href="' + document.location + '" />');</script>
+</head>
+<body ng-app="fastTrackApp" ng-cloak class="ng-cloak" ng-controller="IndexController as vm">
+
+<md-grid-list
+        md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6"
+        md-row-height-gt-md="1:1" md-row-height="1:1"
+        md-gutter="12px" md-gutter-gt-sm="8px" >
+	<md-grid-tile>
+		<md-content>
+			<md-card>
+				<img src="assets/images/businessPartnerCard.jpg">
+				<md-card-title>
+					<md-card-title-text>
+						<span class="md-headline">Geschäftspartner anlegen</span>
+						<span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+					</md-card-title-text>
+				</md-card-title>
+				<md-card-actions layout="row" layout-align="start center">
+					<md-button ng-click="vm.showPopupForm($event)">Prozess Starten</md-button>
+					<md-card-icon-actions>
+						<md-button class="md-icon-button" aria-label="icon">
+							<md-icon md-svg-icon="icon"></md-icon>
+						</md-button>
+					</md-card-icon-actions>
+				</md-card-actions>
+			</md-card>
+		</md-content>
+	</md-grid-tile>
+	<md-grid-tile>
+		<md-content>
+			<md-card>
+				<img src="assets/images/marketPartnerCard.jpg">
+				<md-card-title>
+					<md-card-title-text>
+						<span class="md-headline">Marktpartner anlegen</span>
+						<span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+					</md-card-title-text>
+				</md-card-title>
+				<md-card-actions layout="row" layout-align="start center">
+					<md-button>Prozess Starten</md-button>
+					<md-card-icon-actions>
+						<md-button class="md-icon-button" aria-label="icon">
+							<md-icon md-svg-icon="icon"></md-icon>
+						</md-button>
+					</md-card-icon-actions>
+				</md-card-actions>
+			</md-card>
+		</md-content>
+	</md-grid-tile>
+	<md-grid-tile>
+		<md-content>
+			<md-card>
+				<img src="assets/images/counterCard.jpg">
+				<md-card-title>
+					<md-card-title-text>
+						<span class="md-headline">Zähler anlegen</span>
+						<span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+					</md-card-title-text>
+				</md-card-title>
+				<md-card-actions layout="row" layout-align="start center">
+					<md-button>Prozess Starten</md-button>
+					<md-card-icon-actions>
+						<md-button class="md-icon-button" aria-label="icon">
+							<md-icon md-svg-icon="icon"></md-icon>
+						</md-button>
+					</md-card-icon-actions>
+				</md-card-actions>
+			</md-card>
+		</md-content>
+	</md-grid-tile>
+<!-- 	<md-grid-tile> -->
+<!-- 		<md-content> -->
+<!-- 			<md-card> -->
+<!-- 				<img src="assets/images/smartMeterGatewayCard.jpg"> -->
+<!-- 				<md-card-title> -->
+<!-- 					<md-card-title-text> -->
+<!-- 						<span class="md-headline">Smart Meter Gateway anlegen</span> -->
+<!-- 						<span class="md-subhead">Beschreibung Beschreibung Beschreibung</span> -->
+<!-- 					</md-card-title-text> -->
+<!-- 				</md-card-title> -->
+<!-- 				<md-card-actions layout="row" layout-align="start center"> -->
+<!-- 					<md-button>Prozess Starten</md-button> -->
+<!-- 					<md-card-icon-actions> -->
+<!-- 						<md-button class="md-icon-button" aria-label="icon"> -->
+<!-- 							<md-icon md-svg-icon="icon"></md-icon> -->
+<!-- 						</md-button> -->
+<!-- 					</md-card-icon-actions> -->
+<!-- 				</md-card-actions> -->
+<!-- 			</md-card> -->
+<!-- 		</md-content> -->
+<!-- 	</md-grid-tile> -->
+	<md-grid-tile>
+		<md-content>
+			<md-card>
+				<img src="assets/images/measuringPointCard.jpg">
+				<md-card-title>
+					<md-card-title-text>
+						<span class="md-headline">Messstelle anlegen</span>
+						<span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+					</md-card-title-text>
+				</md-card-title>
+				<md-card-actions layout="row" layout-align="start center">
+					<md-button>Prozess Starten</md-button>
+					<md-card-icon-actions>
+						<md-button class="md-icon-button" aria-label="icon">
+							<md-icon md-svg-icon="icon"></md-icon>
+						</md-button>
+					</md-card-icon-actions>
+				</md-card-actions>
+			</md-card>
+		</md-content>
+	</md-grid-tile>
+	<md-grid-tile>
+		<md-content>
+			<md-card>
+				<img src="assets/images/rateCard.jpg">
+				<md-card-title>
+					<md-card-title-text>
+						<span class="md-headline">Tarif anlegen</span>
+						<span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+					</md-card-title-text>
+				</md-card-title>
+				<md-card-actions layout="row" layout-align="start center">
+					<md-button>Prozess Starten</md-button>
+					<md-card-icon-actions>
+						<md-button class="md-icon-button" aria-label="icon">
+							<md-icon md-svg-icon="icon"></md-icon>
+						</md-button>
+					</md-card-icon-actions>
+				</md-card-actions>
+			</md-card>
+		</md-content>
+	</md-grid-tile>
+</md-grid-list>
+
+	<!-- bower:js -->
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.js"></script>
+	<script src="bower_components/angular-messages/angular-messages.js"></script>
+	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="bower_components/angular-translate/angular-translate.js"></script>
+	<script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+	<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/mobile-detect/mobile-detect.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+	<script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+	<script src="bower_components/moment/moment.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-material/angular-material.js"></script>
+	<!-- endinject -->
+	<script src="app/index.module.js"></script>
+	<script src="app/index.controller.js"></script>
+	<script src="app/businessPartner/businessPartner.module.js"></script>
+	<script src="app/businessPartner/businessPartner.controller.js"></script>
+</body>
+</html>
+
