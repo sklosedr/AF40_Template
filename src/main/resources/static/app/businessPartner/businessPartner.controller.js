@@ -7,16 +7,25 @@
         .controller('BusinessPartnerController', BusinessPartnerController);
     
     /** @ngInject */
-    function BusinessPartnerController($scope)
+    function BusinessPartnerController($scope, $mdStepper)
     {
     	var that = this;
     	
-    	that.secondStep = function() {
-    		alert('Second Step');
+    	$scope.businessPartner = {};
+    	$scope.businessPartner.address = {};
+   	
+    	that.forward = function() {
+    		var steppers = $mdStepper('businessPartnerStepper');
+    		steppers.next();
     	}
     	
-    	that.cancel = function() {
-    		alert('cancel');
+    	that.back = function() {
+    		var steppers = $mdStepper('businessPartnerStepper');
+    		steppers.back();
+    	}
+    	
+    	that.createBusinessPartner = function() {
+    		alert('Create BusinessPartner');
     	}
 
     }
