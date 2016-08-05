@@ -7,13 +7,16 @@
         .controller('BusinessPartnerController', BusinessPartnerController);
     
     /** @ngInject */
-    function BusinessPartnerController($scope, $mdStepper)
+    function BusinessPartnerController($scope, $mdStepper, $http, $mdDialog)
     {
     	var that = this;
     	
     	$scope.businessPartner = {};
+    	$scope.businessPartner.firstname = "";
     	$scope.businessPartner.address = {};
-   	
+    	
+    	var businessPartner = $scope.businessPartner;
+    	
     	that.forward = function() {
     		var steppers = $mdStepper('businessPartnerStepper');
     		steppers.next();
@@ -25,7 +28,14 @@
     	}
     	
     	that.createBusinessPartner = function() {
-    		alert('Create BusinessPartner');
+    		$http.post("http://localhost:8080/businessPartner", $scope.businessPartner, {})
+    			.then(function (result) {
+    				alert('Der Geschäftspartner wurde erfolgreich angelegt.');
+    				$mdDialog.hide();
+    			}).catch(function (result) {
+    				alert('Fehler ' +  result.status + ' ' + result.statusText);
+    				$mdDialog.hide();
+    			} );
     	}
 
     }
