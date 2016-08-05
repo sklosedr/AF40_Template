@@ -28,7 +28,7 @@
     	}
     	
     	that.createBusinessPartner = function() {
-    		$http.post("http://http://app3.level365.de/businessPartner", $scope.businessPartner, {})
+    		$http.post("http://app3.level365.de/businessPartner", $scope.businessPartner, {})
     			.then(function (result) {
     				alert('Der Geschäftspartner wurde erfolgreich angelegt.');
     				$mdDialog.hide();
