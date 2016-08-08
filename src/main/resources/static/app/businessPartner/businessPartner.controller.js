@@ -7,7 +7,7 @@
         .controller('BusinessPartnerController', BusinessPartnerController);
     
     /** @ngInject */
-    function BusinessPartnerController($scope, $mdStepper, $http, $mdDialog)
+    function BusinessPartnerController($scope, $mdStepper, $http, $mdDialog, baseUrl)
     {
     	var that = this;
     	
@@ -30,7 +30,7 @@
     	}
     	
     	that.createBusinessPartner = function() {
-    		$http.post("http://app3.level365.de/businessPartner", $scope.businessPartner, {})
+    		$http.post(baseUrl + "/businessPartner", $scope.businessPartner, {})
     			.then(function (result) {
     				alert('Der Geschäftspartner wurde erfolgreich angelegt.');
     				$mdDialog.hide();
