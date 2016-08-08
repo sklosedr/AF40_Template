@@ -13,11 +13,11 @@
 						<p>Wer ist der Geschäftspartner?</p>
 						<md-input-container>
 							<label>Vorname</label>
-							<input ng-model="businessPartner.firstname" required md-minlength="1" type="text">
+							<input ng-model="businessPartner.person.firstName" required md-minlength="1" type="text">
 						</md-input-container>
 						<md-input-container>
 							<label>Nachname</label>
-							<input ng-model="businessPartner.lastname" required md-minlength="1" type="text">
+							<input ng-model="businessPartner.person.lastName" required md-minlength="1" type="text">
 					</md-step-body>
 					<md-step-actions>
 						<md-button class="md-primary" ng-click="closeDialog()">Abbrechen</md-button>
@@ -47,7 +47,7 @@
 				<md-step md-label="Eingaben prüfen">
 					<md-step-body>
 						<p>Folgenden Geschäftspartner anlegen?</p>
-						<p>{{ businessPartner.firstname }} {{ businessPartner.lastname }}</p>
+						<p>{{ businessPartner.person.firstName }} {{ businessPartner.person.lastName }}</p>
 						<br />
 						<p>{{ businessPartner.address.street }}</p>
 						<p>{{ businessPartner.address.city }}</p>

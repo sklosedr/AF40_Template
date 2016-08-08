@@ -12,10 +12,12 @@
     	var that = this;
     	
     	$scope.businessPartner = {};
-    	$scope.businessPartner.firstname = "";
+    	$scope.businessPartner.person = {};
+    	$scope.businessPartner.contactPerson = {};
     	$scope.businessPartner.address = {};
-    	
+
     	var businessPartner = $scope.businessPartner;
+    	
     	
     	that.forward = function() {
     		var steppers = $mdStepper('businessPartnerStepper');
