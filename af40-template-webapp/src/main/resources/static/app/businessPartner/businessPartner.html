@@ -1,4 +1,4 @@
-<md-dialog aria-label="List dialog" ng-controller="BusinessPartnerController as businessPartnerCtrl" >
+<md-dialog aria-label="List dialog" ng-controller="BusinessPartnerController as vm" >
 <md-dialog-content>
 
 	<form name="businessPartnerForm">
@@ -13,15 +13,15 @@
 						<p>Wer ist der Geschäftspartner?</p>
 						<md-input-container>
 							<label>Vorname</label>
-							<input ng-model="businessPartner.person.firstName" required md-minlength="1" type="text">
+							<input ng-model="vm.businessPartner.person.firstName" required md-minlength="1" type="text">
 						</md-input-container>
 						<md-input-container>
 							<label>Nachname</label>
-							<input ng-model="businessPartner.person.lastName" required md-minlength="1" type="text">
+							<input ng-model="vm.businessPartner.person.lastName" required md-minlength="1" type="text">
 					</md-step-body>
 					<md-step-actions>
 						<md-button class="md-primary" ng-click="closeDialog()">Abbrechen</md-button>
-						<md-button class="md-primary md-raised" ng-click="businessPartnerCtrl.forward()">Weiter</md-button>
+						<md-button class="md-primary md-raised" ng-click="vm.forward()">Weiter</md-button>
 					</md-step-actions>
 				</md-step>
 				
@@ -30,32 +30,32 @@
 						<p>Wie lautet die Postanschrift des Geschäftspartners?</p>
 						<md-input-container>
 							<label>Straße</label>
-							<input ng-model="businessPartner.address.street" required md-minlength="1" type="text">
+							<input ng-model="vm.businessPartner.address.street" required md-minlength="1" type="text">
 						</md-input-container>
 						<md-input-container>
 							<label>Ort</label>
-							<input ng-model="businessPartner.address.city" required md-minlength="1" type="text">
+							<input ng-model="vm.businessPartner.address.city" required md-minlength="1" type="text">
 						</md-input-container>
 					</md-step-body>
 					<md-step-actions>
 						<md-button class="md-primary" ng-click="closeDialog()">Abbrechen</md-button>
-						<md-button class="md-primary" ng-click="businessPartnerCtrl.back()">Zurück</md-button>
-						<md-button class="md-primary md-raised" ng-click="businessPartnerCtrl.forward()">Weiter</md-button>
+						<md-button class="md-primary" ng-click="vm.back()">Zurück</md-button>
+						<md-button class="md-primary md-raised" ng-click="vm.forward()">Weiter</md-button>
 					</md-step-actions>
 				</md-step>
 				
 				<md-step md-label="Eingaben prüfen">
 					<md-step-body>
 						<p>Folgenden Geschäftspartner anlegen?</p>
-						<p>{{ businessPartner.person.firstName }} {{ businessPartner.person.lastName }}</p>
+						<p>{{ vm.businessPartner.person.firstName }} {{ vm.businessPartner.person.lastName }}</p>
 						<br />
-						<p>{{ businessPartner.address.street }}</p>
-						<p>{{ businessPartner.address.city }}</p>
+						<p>{{ vm.businessPartner.address.street }}</p>
+						<p>{{ vm.businessPartner.address.city }}</p>
 					</md-step-body>
 					<md-step-actions>
 						<md-button class="md-primary" ng-click="closeDialog()">Abbrechen</md-button>
-						<md-button class="md-primary" ng-click="businessPartnerCtrl.back()">Zurück</md-button>
-						<md-button class="md-primary md-raised" ng-click="businessPartnerCtrl.createBusinessPartner()">Anlegen</md-button>
+						<md-button class="md-primary" ng-click="vm.back()">Zurück</md-button>
+						<md-button class="md-primary md-raised" ng-click="vm.createBusinessPartner()">Anlegen</md-button>
 					</md-step-actions>
 				</md-step>
 			

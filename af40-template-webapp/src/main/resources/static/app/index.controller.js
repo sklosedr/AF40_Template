@@ -7,11 +7,11 @@
         .controller('IndexController', IndexController);
 
     /** @ngInject */
-    function IndexController($scope, $mdDialog)
+    function IndexController($mdDialog)
     {
-    	var that = this;
+    	var vm = this;
     	
-    	that.showPopupForm = function($event) {
+    	vm.showPopupForm = function($event) {
 
             $mdDialog.show({
                 parent: angular.element(document.body),

@@ -7,30 +7,27 @@
         .controller('BusinessPartnerController', BusinessPartnerController);
     
     /** @ngInject */
-    function BusinessPartnerController($scope, $mdStepper, $http, $mdDialog, baseUrl)
+    function BusinessPartnerController($mdStepper, $http, $mdDialog, baseUrl)
     {
-    	var that = this;
+    	var vm = this;
     	
-    	$scope.businessPartner = {};
-    	$scope.businessPartner.person = {};
-    	$scope.businessPartner.contactPerson = {};
-    	$scope.businessPartner.address = {};
+    	vm.businessPartner = {};
+    	vm.businessPartner.person = {};
+    	vm.businessPartner.contactPerson = {};
+    	vm.businessPartner.address = {};
 
-    	var businessPartner = $scope.businessPartner;
-    	
-    	
-    	that.forward = function() {
+    	vm.forward = function() {
     		var steppers = $mdStepper('businessPartnerStepper');
     		steppers.next();
     	}
     	
-    	that.back = function() {
+    	vm.back = function() {
     		var steppers = $mdStepper('businessPartnerStepper');
     		steppers.back();
     	}
     	
-    	that.createBusinessPartner = function() {
-    		$http.post(baseUrl + "/businessPartner", $scope.businessPartner, {})
+    	vm.createBusinessPartner = function() {
+    		$http.post(baseUrl + "/businessPartner", vm.businessPartner, {})
     			.then(function (result) {
     				alert('Der Geschäftspartner wurde erfolgreich angelegt.');
     				$mdDialog.hide();
