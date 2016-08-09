@@ -4,10 +4,10 @@
 
     angular
         .module('fastTrackApp')
-        .controller('IndexController', IndexController);
+        .controller('WizardController', WizardController);
 
     /** @ngInject */
-    function IndexController($mdDialog)
+    function WizardController($mdDialog)
     {
     	var vm = this;
     	

@@ -6,17 +6,16 @@
     angular.module('fastTrackApp').config(function($routeProvider) {
     	$routeProvider
     		.when('/', {
-    			templateUrl: 'app/wizard/wizard.html'
-//        		controller: 'IndexController',
-//        		controllerAs: 'vm'    			
+    			templateUrl: 'app/wizard/wizard.html',
+        		controller: 'WizardController',
+        		controllerAs: 'vm'    			
     		})
     		.when('/login', {
-    			templateUrl: 'app/login/login.html'
-//    			controller: 'IndexController',
-//    			controllerAs: 'vm'
+    			templateUrl: 'app/login/login.html',
+    			controller: 'LoginController',
+    			controllerAs: 'vm'
     		})
     		.otherwise('/');
-    		
     });
     
     
