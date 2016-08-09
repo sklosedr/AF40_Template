@@ -6,6 +6,7 @@ import static org.junit.Assert.assertThat;
 import java.net.URL;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,6 +24,7 @@ import com.nextlevel.fast.track.frontend.Application;
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
 @IntegrationTest({"server.port=0"})
+@Ignore
 public class MarketPartnerControllerIntegrationTest {
 
     @Value("${local.server.port}")
