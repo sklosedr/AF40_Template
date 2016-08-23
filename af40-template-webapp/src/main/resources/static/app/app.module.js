@@ -2,6 +2,6 @@
 {
     'use strict';
     
-    angular.module('fastTrackApp', ['ngMaterial', 'ngRoute', 'fastTrackApp.businessPartner']);
+    angular.module('fastTrackApp', ['ngMaterial', 'ngRoute', 'base64', 'fastTrackApp.businessPartner']);
 
 })();

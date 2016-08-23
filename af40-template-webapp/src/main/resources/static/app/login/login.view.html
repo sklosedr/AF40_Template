@@ -1,5 +1,23 @@
-<div>
-
-<div>LOGIN</div>
-
+<div layout="column" flex id="content" role="main">
+	<md-content layout="vertical" flex id="content">
+		<div layout="row" layout-align="center center" layout-fill>
+			<md-whiteframe class="md-whiteframe-z1" layout="column" flex="30" layout-padding>
+				<md-content>
+					<md-input-container>
+						<label>Benutzername</label>
+						<input ng-model="vm.credentials.username">
+					</md-input-container>
+					<md-input-container>
+						<label>Password</label>
+						<input ng-model="vm.credentials.password" type="password">
+					</md-input-container>
+					<md-input-container layout-align="center center">
+						<div layout="row" layout-sm="column" layout-margin>
+							<md-button class="md-raised" flex="50" flex-sm="100" ng-click="vm.login()">Login</md-button>
+						</div>
+					</md-input-container>
+				</md-content>
+			</md-whiteframe>
+		</div>
+	</md-content>
 </div>

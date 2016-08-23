@@ -8,7 +8,7 @@
     		.when('/', {
     			templateUrl: 'app/wizard/wizard.view.html',
         		controller: 'WizardController',
-        		controllerAs: 'vm'    			
+        		controllerAs: 'vm'
     		})
     		.when('/login', {
     			templateUrl: 'app/login/login.view.html',

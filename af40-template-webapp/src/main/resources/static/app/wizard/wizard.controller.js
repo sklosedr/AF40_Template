@@ -7,9 +7,13 @@
         .controller('WizardController', WizardController);
 
     /** @ngInject */
-    function WizardController($mdDialog)
+    function WizardController($mdDialog, $rootScope, $location)
     {
     	var vm = this;
+    	
+    	if (!$rootScope.authenticated === true) {
+    		$location.path('/login');    		
+    	}
     	
     	vm.showPopupForm = function($event) {
 
