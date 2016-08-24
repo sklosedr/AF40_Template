@@ -8,16 +8,41 @@
                         md-linear="$ctrl.isLinear"
                         md-alternative="$ctrl.isAlternative">
 			
-				<md-step md-label="Namen angeben">
+				<md-step md-label="Namen angeben" >
 					<md-step-body>
-						<p>Wer ist der Geschäftspartner?</p>
+						<h3>Wer ist der Geschäftspartner?</h3>
+						<p>Rechtsform</p>
+						<md-radio-group ng-model="vm.formOfOrganisation" layout="row">
+							<md-radio-button value="person" class="md-primary">Privatperson</md-radio-button>
+							<md-radio-button value="company" class="md-primary">Unternehmen</md-radio-button>
+						</md-radio-group>
+						<div ng-show="vm.isPerson()">
+							<p>Anrede</p>
+							<md-radio-group ng-model="vm.businessPartner.person.salutation" layout="row">
+								<md-radio-button value="MS" class="md-primary" ng-model="vm.isPerson">Frau</md-radio-button>
+								<md-radio-button value="MR" class="md-primary" ng-model="vm.isCompany">Herr</md-radio-button>
+							</md-radio-group>
+							<div layout="row" flex>
+								<md-input-container>
+									<label>Vorname</label>
+									<input ng-model="vm.businessPartner.person.firstName" required md-minlength="1" type="text">
+								</md-input-container>
+								<md-input-container>
+									<label>Nachname</label>
+									<input ng-model="vm.businessPartner.person.lastName" required md-minlength="1" type="text">
+								</md-input-container>
+							</div>
+						</div>
+						<div ng-show="vm.isCompany()">
+							<md-input-container>
+								<label>Name</label>
+								<input ng-model="vm.businessPartner.company" required md-minlength="1" type="text">
+							</md-input-container>
+						</div>
 						<md-input-container>
-							<label>Vorname</label>
-							<input ng-model="vm.businessPartner.person.firstName" required md-minlength="1" type="text">
+							<label>Geschäftspartnernummer (Optional)</label>
+							<input ng-model="vm.businessPartner.phone" type="text">
 						</md-input-container>
-						<md-input-container>
-							<label>Nachname</label>
-							<input ng-model="vm.businessPartner.person.lastName" required md-minlength="1" type="text">
 					</md-step-body>
 					<md-step-actions>
 						<md-button class="md-primary" ng-click="closeDialog()">Abbrechen</md-button>
@@ -27,14 +52,30 @@
 				
 				<md-step md-label="Adresse angeben">
 					<md-step-body>
-						<p>Wie lautet die Postanschrift des Geschäftspartners?</p>
+						<h3>Wie lautet die Postanschrift des Geschäftspartners?</h3>
+						<div layout="row" flex>
+							<md-input-container md-no-float class="flex">
+								<label>Straße</label>
+								<input ng-model="vm.businessPartner.address.street" required md-minlength="1" type="text">
+							</md-input-container>
+							<md-input-container class="flex-20">
+								<label>Hausnummer</label>
+								<input ng-model="vm.businessPartner.address.streetNumber" required md-minlength="1" type="text">
+							</md-input-container>
+						</div>
+						<div layout="row" flex>
+							<md-input-container class="flex-20">
+								<label>PLZ</label>
+								<input ng-model="vm.businessPartner.address.zipCode" required md-minlength="1" type="text">
+							</md-input-container>
+							<md-input-container class="flex">
+								<label>Ort</label>
+								<input ng-model="vm.businessPartner.address.city" required md-minlength="1" type="text">
+							</md-input-container>						
+						</div>
 						<md-input-container>
-							<label>Straße</label>
-							<input ng-model="vm.businessPartner.address.street" required md-minlength="1" type="text">
-						</md-input-container>
-						<md-input-container>
-							<label>Ort</label>
-							<input ng-model="vm.businessPartner.address.city" required md-minlength="1" type="text">
+							<label>Adresszusatz (Optional)</label>
+							<input ng-model="vm.businessPartner.address.extraAddressLine" type="text">
 						</md-input-container>
 					</md-step-body>
 					<md-step-actions>
@@ -46,11 +87,12 @@
 				
 				<md-step md-label="Eingaben prüfen">
 					<md-step-body>
-						<p>Folgenden Geschäftspartner anlegen?</p>
+						<h3>Folgenden Geschäftspartner anlegen?</h3>
+						<p>{{ vm.businessPartner.company }}</p>
 						<p>{{ vm.businessPartner.person.firstName }} {{ vm.businessPartner.person.lastName }}</p>
 						<br />
-						<p>{{ vm.businessPartner.address.street }}</p>
-						<p>{{ vm.businessPartner.address.city }}</p>
+						<p>{{ vm.businessPartner.address.street }} {{ vm.businessPartner.address.streetNumber }}</p>
+						<p>{{ vm.businessPartner.address.zipCode }} {{ vm.businessPartner.address.city }}</p>
 					</md-step-body>
 					<md-step-actions>
 						<md-button class="md-primary" ng-click="closeDialog()">Abbrechen</md-button>
@@ -60,7 +102,6 @@
 				</md-step>
 			
 		</md-stepper>
-	
 	</form>
 
 

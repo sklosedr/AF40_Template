@@ -11,14 +11,23 @@
     {
     	var vm = this;
     	
+    	vm.formOfOrganisation = 'person';
     	vm.businessPartner = {};
     	vm.businessPartner.person = {};
     	vm.businessPartner.contactPerson = {};
     	vm.businessPartner.address = {};
-
+    	
     	vm.forward = function() {
     		var steppers = $mdStepper('businessPartnerStepper');
     		steppers.next();
+    	}
+    	
+    	vm.isPerson = function() {
+    		return vm.formOfOrganisation === 'person';
+    	}
+    	
+    	vm.isCompany = function() {
+    		return vm.formOfOrganisation === 'company';
     	}
     	
     	vm.back = function() {
