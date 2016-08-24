@@ -21,7 +21,7 @@ public class FrontendConfiguration extends WebSecurityConfigurerAdapter {
 	        .httpBasic()     
 	      .and()
 	        .authorizeRequests()
-	          .antMatchers("/index.html", "/app/**", "/bower_components/**", "/assets/**", "/").permitAll()
+	          .antMatchers("/index.html", "/app/**", "/bower_components/**", "/assets/**", "/css/**", "/").permitAll()
 	          .anyRequest().authenticated()
 	          .and()
 	          .csrf()
