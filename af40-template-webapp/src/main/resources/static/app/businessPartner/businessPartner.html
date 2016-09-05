@@ -24,27 +24,27 @@
 							</md-radio-group>
 							<div layout="row" flex>
 								<md-input-container>
-									<label>Vorname</label>
+									<label class="md-no-float">Vorname</label>
 									<input ng-model="vm.businessPartner.person.firstName" required md-minlength="1" type="text">
 								</md-input-container>
 								<md-input-container>
-									<label>Nachname</label>
+									<label class="md-no-float">Nachname</label>
 									<input ng-model="vm.businessPartner.person.lastName" required md-minlength="1" type="text">
 								</md-input-container>
 							</div>
 						</div>
 						<div ng-show="vm.isCompany()">
 							<md-input-container>
-								<label>Name</label>
+								<label class="md-no-float">Name</label>
 								<input ng-model="vm.businessPartner.company" required md-minlength="1" type="text">
 							</md-input-container>
 						</div>
 						<md-input-container>
-							<label>Geschäftspartnernummer (Optional)</label>
+							<label class="md-no-float">Geschäftspartnernummer (Optional)</label>
 							<input ng-model="vm.businessPartner.phone" type="text">
 						</md-input-container>
 					</md-step-body>
-					<md-step-actions>
+					<md-step-actions layout="row" layout-align="space-between">
 						<md-button class="md-primary" ng-click="closeDialog()">Abbrechen</md-button>
 						<md-button class="md-primary md-raised" ng-click="vm.forward()">Weiter</md-button>
 					</md-step-actions>
@@ -55,49 +55,53 @@
 						<h3>Wie lautet die Postanschrift des Geschäftspartners?</h3>
 						<div layout="row" flex>
 							<md-input-container md-no-float class="flex">
-								<label>Straße</label>
+								<label class="md-no-float">Straße</label>
 								<input ng-model="vm.businessPartner.address.street" required md-minlength="1" type="text">
 							</md-input-container>
 							<md-input-container class="flex-20">
-								<label>Hausnummer</label>
+								<label class="md-no-float">Hausnummer</label>
 								<input ng-model="vm.businessPartner.address.streetNumber" required md-minlength="1" type="text">
 							</md-input-container>
 						</div>
 						<div layout="row" flex>
 							<md-input-container class="flex-20">
-								<label>PLZ</label>
+								<label class="md-no-float">PLZ</label>
 								<input ng-model="vm.businessPartner.address.zipCode" required md-minlength="1" type="text">
 							</md-input-container>
 							<md-input-container class="flex">
-								<label>Ort</label>
+								<label class="md-no-float">Ort</label>
 								<input ng-model="vm.businessPartner.address.city" required md-minlength="1" type="text">
 							</md-input-container>						
 						</div>
 						<md-input-container>
-							<label>Adresszusatz (Optional)</label>
+							<label class="md-no-float">Adresszusatz (Optional)</label>
 							<input ng-model="vm.businessPartner.address.extraAddressLine" type="text">
 						</md-input-container>
 					</md-step-body>
-					<md-step-actions>
+					<md-step-actions layout="row" layout-align="space-between">
 						<md-button class="md-primary" ng-click="closeDialog()">Abbrechen</md-button>
-						<md-button class="md-primary" ng-click="vm.back()">Zurück</md-button>
-						<md-button class="md-primary md-raised" ng-click="vm.forward()">Weiter</md-button>
+						<md-button-container>
+							<md-button class="md-primary" ng-click="vm.back()">Zurück</md-button>
+							<md-button class="md-primary md-raised" ng-click="vm.forward()">Weiter</md-button>
+						</md-button-container>
 					</md-step-actions>
 				</md-step>
 				
 				<md-step md-label="Eingaben prüfen">
 					<md-step-body>
 						<h3>Folgenden Geschäftspartner anlegen?</h3>
-						<p>{{ vm.businessPartner.company }}</p>
-						<p>{{ vm.businessPartner.person.firstName }} {{ vm.businessPartner.person.lastName }}</p>
+						<label>{{ vm.businessPartner.company }}</label>
+						<label>{{ vm.businessPartner.person.firstName }} {{ vm.businessPartner.person.lastName }}</label>
 						<br />
-						<p>{{ vm.businessPartner.address.street }} {{ vm.businessPartner.address.streetNumber }}</p>
-						<p>{{ vm.businessPartner.address.zipCode }} {{ vm.businessPartner.address.city }}</p>
+						<label>{{ vm.businessPartner.address.street }} {{ vm.businessPartner.address.streetNumber }}</label>
+						<label>{{ vm.businessPartner.address.zipCode }} {{ vm.businessPartner.address.city }}</label>
 					</md-step-body>
-					<md-step-actions>
+					<md-step-actions layout="row" layout-align="space-between">
 						<md-button class="md-primary" ng-click="closeDialog()">Abbrechen</md-button>
-						<md-button class="md-primary" ng-click="vm.back()">Zurück</md-button>
-						<md-button class="md-primary md-raised" ng-click="vm.createBusinessPartner()">Anlegen</md-button>
+						<md-button-container>
+							<md-button class="md-primary" ng-click="vm.back()">Zurück</md-button>
+							<md-button class="md-primary md-raised" ng-click="vm.createBusinessPartner()">Anlegen</md-button>
+						</md-button-container>
 					</md-step-actions>
 				</md-step>
 			

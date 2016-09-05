@@ -11,16 +11,16 @@
 				<form name="form">
 				<md-content style="background-color: #EEEEEE" >
 					<md-input-container class="md-block">
-						<label>Benutzername</label>
+						<label class="md-no-float">Benutzername</label>
 						<input ng-model="vm.credentials.username" required ng-minlength="1" style="background-color: #FFFFFF">
 					</md-input-container>
 					<md-input-container class="md-block">
-						<label>Password</label>
+						<label class="md-no-float">Password</label>
 						<input ng-model="vm.credentials.password" type="password" style="background-color: #FFFFFF">
 					</md-input-container>
-					<md-input-container class="md-block" layout-align="center center">
-						<div layout="row" layout-sm="column" layout-margin>
-							<md-button class="md-raised" flex="50" flex-sm="100" ng-click="vm.login()" style="color: #EEE; background-color: #FFC400">Anmelden</md-button>
+					<md-input-container class="md-block" layout-align="center center" md-no-float>
+						<div layout="row" layout-align="end">
+							<md-button class="md-raised md-primary" ng-click="vm.login()" >Anmelden</md-button>
 						</div>
 					</md-input-container>
 				</md-content>
