@@ -49,7 +49,7 @@ a.md-button.md-primary.md-fab,
 .md-button.md-default-theme.md-primary.md-fab, 
 .md-button.md-primary.md-fab
 {
-	background-color: #ffc107;
+	background-color: #ffc107; 
 }
 
 a.md-button.md-default-theme.md-primary.md-raised:not([disabled]):hover, 
