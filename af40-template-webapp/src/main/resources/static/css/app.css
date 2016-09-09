@@ -58,6 +58,10 @@ a.md-button.md-default-theme.md-primary.md-raised:not([disabled]):hover, a.md-bu
 	min-height: 400px;
 }
 
+#meteringPointStepper md-step-body
+{
+	min-height: 550px;
+}
 
 #businessPartnerStepper md-step-actions
 {
