@@ -1,4 +1,4 @@
-package com.nextlevel.fast.track.frontend.business.partner.model;
+package com.nextlevel.fast.track.frontend.model;
 
 public class Address {
 	
