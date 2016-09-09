@@ -8,7 +8,7 @@
     angular.module('fastTrackApp').config(function($httpProvider, $mdThemingProvider) {
     	$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
     	$mdThemingProvider.theme('default')
-	    	.primaryPalette('amber')
+	    	.primaryPalette('orange')
 	        .accentPalette('light-blue')
 	        .warnPalette('deep-orange')
 	        .backgroundPalette('grey'); 

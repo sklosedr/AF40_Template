@@ -39,27 +39,36 @@ label.md-no-float {
     font-size:0.75rem;
     left:2px!important;
 }
-
-/*a.md-button.md-default-theme.md-primary.md-raised, 
-a.md-button.md-primary.md-raised, 
-a.md-button.md-default-theme.md-primary.md-fab, 
-a.md-button.md-primary.md-fab, 
-.md-button.md-default-theme.md-primary.md-raised, 
-.md-button.md-primary.md-raised, 
-.md-button.md-default-theme.md-primary.md-fab, 
-.md-button.md-primary.md-fab
+a.md-button.md-default-theme.md-primary.md-raised, a.md-button.md-primary.md-raised, a.md-button.md-default-theme.md-primary.md-fab, a.md-button.md-primary.md-fab, .md-button.md-default-theme.md-primary.md-raised, .md-button.md-primary.md-raised, .md-button.md-default-theme.md-primary.md-fab, .md-button.md-primary.md-fab
 {
-	background-color: #ffc107; 
+	color:rgba(255, 255, 255, 0.8);
+	font-weight: bold;
 }
 
-a.md-button.md-default-theme.md-primary.md-raised:not([disabled]):hover, 
-a.md-button.md-primary.md-raised:not([disabled]):hover, 
-a.md-button.md-default-theme.md-primary.md-fab:not([disabled]):hover, 
-a.md-button.md-primary.md-fab:not([disabled]):hover, 
-.md-button.md-default-theme.md-primary.md-raised:not([disabled]):hover, 
-.md-button.md-primary.md-raised:not([disabled]):hover, 
-.md-button.md-default-theme.md-primary.md-fab:not([disabled]):hover, 
-.md-button.md-primary.md-fab:not([disabled]):hover
+a.md-button.md-default-theme.md-primary.md-raised:not([disabled]):hover, a.md-button.md-primary.md-raised:not([disabled]):hover, a.md-button.md-default-theme.md-primary.md-fab:not([disabled]):hover, a.md-button.md-primary.md-fab:not([disabled]):hover, .md-button.md-default-theme.md-primary.md-raised:not([disabled]):hover, .md-button.md-primary.md-raised:not([disabled]):hover, .md-button.md-default-theme.md-primary.md-fab:not([disabled]):hover, .md-button.md-primary.md-fab:not([disabled]):hover
 {
-	background-color:#ff6f00;
-}*/
+	background-color: #ff6f00;
+}
+
+#businessPartnerStepper md-step-body
+{
+	min-height: 400px;
+}
+
+
+#businessPartnerStepper md-step-actions
+{
+	padding: 1rem;
+}
+
+.margin-top
+{
+	margin-top: 1rem;
+}
+
+.md-button
+{
+	font-weight: 600;
+}
+
+
