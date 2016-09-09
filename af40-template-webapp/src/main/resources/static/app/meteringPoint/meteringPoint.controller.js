@@ -102,6 +102,31 @@
             };
 
           }
+          
+      	  vm.isNewGateway = function() {
+      		  return vm.selectedGateway === 'new_gateway';
+      	  }
+          
+          
+          vm.gateways = [
+            {
+            	gatewayId: 'EPPC0287658934'            	
+            },
+            {
+            	gatewayId: 'ETHE0112345678'            	
+            },
+            {
+            	gatewayId: 'ETHE0992347778'            	
+            },
+            {
+            	gatewayId: 'ETHE0992347779'            	
+            },
+            {
+            	gatewayId: 'ETHE0992347780'            	
+            }
+          ];
+          
+          
     	
     }
     

@@ -2,6 +2,11 @@
 	height: 300px;
 }
 
+
+p.textfield {
+	width: 800px;
+}
+
 md-content {
 	width: 100%;
 	height: 100%;

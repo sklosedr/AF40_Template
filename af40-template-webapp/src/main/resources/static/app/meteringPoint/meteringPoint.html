@@ -77,6 +77,41 @@
 				<md-step md-label="Mit Gateway verbinden">
 					<md-step-body>
 						<h3>Mit welchem Gateway soll die Messstelle verbunden werden?</h3>
+						<h3>Mit welchem Gateway soll die Messstelle verbunden werden?</h3>
+						<p class="textfield">An dem Anschlussobjekt gibt es bereits Messstellen, die mit den unten aufgeführten Smart Meter Gateways verbunden sind.
+						Verbinden Sie die neue Messstelle mit einem der bestehenden Gateways oder geben Sie die Bezeichnung eines neuen Gateways ein,
+						mit dem die Messstelle verbunden werden soll:</p>
+						
+						<md-radio-group ng-model="vm.selectedGateway" >
+							<div flex class="row" layout='row' layout-padding layout-align="start center" >
+							<md-radio-button flex value="new_gateway" class="md-primary" >
+								Messstelle mit einem neuen Gateway verbinden
+						    </md-radio-button>
+						    <div layout="row" class="row" ng-show="vm.isNewGateway()" flex>
+								<md-input-container>
+									<label class="md-no-float">GatewayID</label>
+									<input ng-model="vm.newGatewayId" required md-minlength="1" type="text">
+								</md-input-container>
+						    </div>
+							</div>
+							<div ng-repeat='gateway in vm.gateways' class="row">
+								<div flex layout='row' layout-padding layout-align="start center" >
+						          <md-radio-button flex ng-value="gateway.gatewayId" class="md-primary" >
+						          	{{ gateway.gatewayId }}
+						          </md-radio-button>
+						          <div flex style="max-width:350px;">
+									<span>2x</span>
+									<img src="assets/icons/power-active.png" class="md-avatar" alt="Elektrizität">
+									<span>1x</span>
+									<img src="assets/icons/gas-active.png" class="md-avatar" alt="Gas">
+									<span>1x</span>
+									<img src="assets/icons/water-active.png" class="md-avatar" alt="Wasser">
+									<span>0x</span>
+									<img src="assets/icons/heat-inactive.png" class="md-avatar" alt="Wärme">
+						          </div>
+								</div>
+							</div>
+						</md-radio-group>						
 					</md-step-body>
 					<md-step-actions layout="row" layout-align="space-between">
 						<md-button class="md-primary" ng-click="closeDialog()">Abbrechen</md-button>
