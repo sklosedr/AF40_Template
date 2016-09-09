@@ -15,12 +15,12 @@
     		$location.path('/login');    		
     	}
     	
-    	vm.showPopupForm = function($event) {
+    	vm.showPopupForm = function($event, $templateUrl) {
 
             $mdDialog.show({
                 parent: angular.element(document.body),
                 targetEvent: $event,
-                templateUrl: 'app/businessPartner/businessPartner.html' ,
+                templateUrl: $templateUrl ,
                 locals: {
                     items: this.items
                 },

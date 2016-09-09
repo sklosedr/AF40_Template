@@ -1,5 +1,7 @@
 package com.nextlevel.fast.track.frontend.business.partner.model;
 
+import com.nextlevel.fast.track.frontend.model.Address;
+
 public class BusinessPartner {
 	
 	private Long businessPartnerId;
