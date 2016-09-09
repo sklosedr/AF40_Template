@@ -1,15 +1,16 @@
 <div layout="column" flex id="content" role="main" style="background-color: #EEEEEE">
-	<md-layout layout="column" style="background-color: #1A94C6; height: 25px;">&nbsp;</md-layout>
+	<md-layout layout="column" style="background-color: #03a9f4; height: 25px;">&nbsp;</md-layout>
 	<md-whiteframe class="md-whiteframe-5dp layout-align-left-center layout-row flex-sm-45 flex-gt-sm-35 flex-gt-md-25" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="" layout-align="left center" style="height: 150px; padding-left: 100px; background-color: #FFFFFF">
-		<span><img src="assets/logo/logo.png" style="width: 100px; height: 100px; "></span>
+		<span><img src="assets/logo/logo.png" style="width: 75px; height: 75px; "></span>
+		<span style="padding-left: 25px; font-weight:bold;font-size:1.5rem;color:#616161;">myBusiness smartEnergy: Fast Track</span>
 	</md-whiteframe>
 	
 	<md-layout layout="column">&nbsp;</md-layout>
 
 	<md-content layout="vertical" flex id="content">
-		<div flex layout="row" layout-align="left center" layout-fill style="padding-left: 100px; background-color: #EEEEEE">
+		<div flex layout="row" layout-align="left center" layout-fill style="padding-left: 100px;">
 				<form name="form">
-				<md-content style="background-color: #EEEEEE" >
+				<md-content>
 					<md-input-container class="md-block">
 						<label class="md-no-float">Benutzername</label>
 						<input ng-model="vm.credentials.username" required ng-minlength="1" style="background-color: #FFFFFF">
@@ -29,5 +30,5 @@
 	</md-content>
 	
 	
-	<md-layout layout="column" style="background-color: #1A94C6; height: 25px;">&nbsp;</md-layout>
+	<md-layout layout="column" class="footer-login">&nbsp;</md-layout>
 </div>

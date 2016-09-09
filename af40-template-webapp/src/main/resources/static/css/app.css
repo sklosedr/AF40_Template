@@ -1,81 +1,106 @@
-/*h3 {
-	color: #1A94C6;
-	padding-left: 5px;
+.angular-google-map-container {
+	height: 300px;
 }
-p {
-	padding-left: 5px;
-	font-size: x-small;
-	color: #999999;
-}
-md-radio-group {
-	padding-left: 5px;
-	padding-bottom: 5px;
-}
-input {
-	padding-left: 5px;
-}
-md-input-container {
-	padding-left: 5px;
-}*/
-
-
-.angular-google-map-container { height: 400px; }
 
 md-content {
-
-    width: 100%;
-    height: 100%;
-	background-color:transparent;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
 }
 
 md-card {
-
-    height: 95%;
+	height: 95%;
 }
 
-md-step-body
-{
+md-step-body {
 	padding: 1rem;
 }
 
 label.md-no-float {
-    font-size:0.75rem;
-    left:2px!important;
+	font-size: 0.75rem;
+	left: 2px !important;
 }
-a.md-button.md-default-theme.md-primary.md-raised, a.md-button.md-primary.md-raised, a.md-button.md-default-theme.md-primary.md-fab, a.md-button.md-primary.md-fab, .md-button.md-default-theme.md-primary.md-raised, .md-button.md-primary.md-raised, .md-button.md-default-theme.md-primary.md-fab, .md-button.md-primary.md-fab
-{
-	color:rgba(255, 255, 255, 0.8);
+
+a.md-button.md-default-theme.md-primary.md-raised, a.md-button.md-primary.md-raised,
+	a.md-button.md-default-theme.md-primary.md-fab, a.md-button.md-primary.md-fab,
+	.md-button.md-default-theme.md-primary.md-raised, .md-button.md-primary.md-raised,
+	.md-button.md-default-theme.md-primary.md-fab, .md-button.md-primary.md-fab
+	{
+	color: rgba(255, 255, 255, 0.8);
 	font-weight: bold;
 }
 
-a.md-button.md-default-theme.md-primary.md-raised:not([disabled]):hover, a.md-button.md-primary.md-raised:not([disabled]):hover, a.md-button.md-default-theme.md-primary.md-fab:not([disabled]):hover, a.md-button.md-primary.md-fab:not([disabled]):hover, .md-button.md-default-theme.md-primary.md-raised:not([disabled]):hover, .md-button.md-primary.md-raised:not([disabled]):hover, .md-button.md-default-theme.md-primary.md-fab:not([disabled]):hover, .md-button.md-primary.md-fab:not([disabled]):hover
-{
+a.md-button.md-default-theme.md-primary.md-raised:not ([disabled] ):hover,
+	a.md-button.md-primary.md-raised:not ([disabled] ):hover, a.md-button.md-default-theme.md-primary.md-fab:not
+	 ([disabled] ):hover, a.md-button.md-primary.md-fab:not ([disabled] ):hover,
+	.md-button.md-default-theme.md-primary.md-raised:not ([disabled] ):hover,
+	.md-button.md-primary.md-raised:not ([disabled] ):hover, .md-button.md-default-theme.md-primary.md-fab:not
+	 ([disabled] ):hover, .md-button.md-primary.md-fab:not ([disabled] ):hover
+	{
 	background-color: #ff6f00;
 }
 
-#businessPartnerStepper md-step-body
-{
+#businessPartnerStepper md-step-body {
 	min-height: 400px;
 }
 
-#meteringPointStepper md-step-body
-{
-	min-height: 550px;
+#meteringPointStepper md-step-body {
+	min-height: 450px;
 }
 
-#businessPartnerStepper md-step-actions
-{
+#businessPartnerStepper md-step-actions, #meteringPointStepper md-step-actions
+	{
 	padding: 1rem;
 }
 
-.margin-top
-{
+.margin-top {
 	margin-top: 1rem;
 }
 
-.md-button
-{
+.md-button {
 	font-weight: 600;
 }
 
+.footer-login {
+	background-color: #03a9f4;
+	height: 75px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
 
+.footer-wizard {
+	background-color: #03a9f4;
+	height: 75px;
+	width: 100%;
+}
+
+.container.ng-scope {
+	height: 100vh;
+	background-color: #EEEEEE;
+}
+
+/* Sticky Footer */
+.site {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.site-header, .site-footer {
+	flex: none;
+}
+
+.site-content {
+	flex: 1 0 auto;
+	padding: 0;
+	width: 100%;
+}
+
+.site-content::after {
+	content: '\00a0';
+	display: block;
+	margin-top: 0;
+	height: 0px;
+	visibility: hidden;
+}

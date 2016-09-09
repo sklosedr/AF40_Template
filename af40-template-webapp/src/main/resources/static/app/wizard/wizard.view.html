@@ -1,153 +1,154 @@
-<div layout="column" flex id="content" role="main" style="background-color: #EEEEEE">
-	<md-layout layout="column" style="background-color: #1A94C6; height: 25px;">&nbsp;</md-layout>
-	<md-whiteframe class="md-whiteframe-5dp layout-align-left-center layout-row flex-sm-45 flex-gt-sm-35 flex-gt-md-25" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="" layout-align="left center" style="height: 150px; padding: 10px; padding-left: 100px; background-color: #FFFFFF">
-		<span><img src="assets/logo/logo.png" style="width: 50px; height: 50px; "></span>
-		<span style="padding-left: 25px; font-weight:bold">myBusiness smartEnergy: Fast Track</span>
-	</md-whiteframe>
-	
-	<md-layout layout="column">&nbsp;</md-layout>
+<div layout="column" flex id="content" role="main" class="site" style="background-color: #EEEEEE">
+    <div class="site-header">
+        <md-layout layout="column" style="background-color: #03a9f4; height: 25px;">&nbsp;</md-layout>
+        <md-whiteframe class="md-whiteframe-5dp layout-align-left-center layout-row" layout-align="left center" style="height: 150px; padding: 10px; padding-left: 100px; background-color: #FFFFFF">
+            <span><img src="assets/logo/logo.png" style="width: 75px; height: 75px; "></span>
+            <span style="padding-left: 25px; font-weight:bold;font-size:1.5rem;color:#616161;">myBusiness smartEnergy: Fast Track</span>
+        </md-whiteframe>
+    </div>
 
-<div class="ng-scope layout-column">
-<div class="flex">
+    <div class="margin-top layout-column site-content">
+        <div class="flex">
+
+            <md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-lg="4" md-cols="4" md-row-height="4:5" md-gutter-sm="8px" md-gutter-md="8px" md-gutter-lg="8px">
+                <md-grid-tile>
+                    <md-content>
+                        <md-card>
+                            <img src="assets/images/businessPartnerCard.jpg">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Geschäftspartner anlegen</span>
+                                    <span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-actions layout="row" layout-align="start center">
+                                <md-button class="md-primary" ng-click="vm.showPopupForm($event, 'app/businessPartner/businessPartner.html')">Prozess Starten</md-button>
+                                <md-card-icon-actions>
+                                    <md-button class="md-icon-button" aria-label="icon">
+                                        <md-icon md-svg-icon="icon"></md-icon>
+                                    </md-button>
+                                </md-card-icon-actions>
+                            </md-card-actions>
+                        </md-card>
+                    </md-content>
+                </md-grid-tile>
 
 
-<md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-lg="4" md-cols="4" md-row-height="4:5" md-gutter-sm="8px" md-gutter-md="8px" md-gutter-lg="8px">
-	<md-grid-tile>
-		<md-content>
-			<md-card>
-				<img src="assets/images/businessPartnerCard.jpg">
-				<md-card-title>
-					<md-card-title-text>
-						<span class="md-headline">Geschäftspartner anlegen</span>
-						<span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
-					</md-card-title-text>
-				</md-card-title>
-				<md-card-actions layout="row" layout-align="start center">
-					<md-button class="md-primary" ng-click="vm.showPopupForm($event, 'app/businessPartner/businessPartner.html')">Prozess Starten</md-button>
-					<md-card-icon-actions>
-						<md-button class="md-icon-button" aria-label="icon">
-							<md-icon md-svg-icon="icon"></md-icon>
-						</md-button>
-					</md-card-icon-actions>
-				</md-card-actions>
-			</md-card>
-		</md-content>
-	</md-grid-tile>
-	
-	
-	<md-grid-tile>
-		<md-content>
-			<md-card>
-				<img src="assets/images/marketPartnerCard.jpg">
-				<md-card-title>
-					<md-card-title-text>
-						<span class="md-headline">Marktpartner anlegen</span>
-						<span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
-					</md-card-title-text>
-				</md-card-title>
-				<md-card-actions layout="row" layout-align="start center">
-					<md-button class="md-primary">Prozess Starten</md-button>
-					<md-card-icon-actions>
-						<md-button class="md-icon-button" aria-label="icon">
-							<md-icon md-svg-icon="icon"></md-icon>
-						</md-button>
-					</md-card-icon-actions>
-				</md-card-actions>
-			</md-card>
-		</md-content>
-	</md-grid-tile>
-	
-	<md-grid-tile>
-		<md-content>
-			<md-card>
-				<img src="assets/images/connectionObjectCard.jpg">
-				<md-card-title>
-					<md-card-title-text>
-						<span class="md-headline">Anschlussobjekt pflegen</span>
-						<span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
-					</md-card-title-text>
-				</md-card-title>
-				<md-card-actions layout="row" layout-align="start center">
-					<md-button class="md-primary">Prozess Starten</md-button>
-					<md-card-icon-actions>
-						<md-button class="md-icon-button" aria-label="icon">
-							<md-icon md-svg-icon="icon"></md-icon>
-						</md-button>
-					</md-card-icon-actions>
-				</md-card-actions>
-			</md-card>
-		</md-content>
-	</md-grid-tile>
-	
-	<md-grid-tile>
-		<md-content>
-			<md-card>
-				<img src="assets/images/counterCard.jpg">
-				<md-card-title>
-					<md-card-title-text>
-						<span class="md-headline">Zähler anlegen</span>
-						<span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
-					</md-card-title-text>
-				</md-card-title>
-				<md-card-actions layout="row" layout-align="start center">
-					<md-button class="md-primary">Prozess Starten</md-button>
-					<md-card-icon-actions>
-						<md-button class="md-icon-button" aria-label="icon">
-							<md-icon md-svg-icon="icon"></md-icon>
-						</md-button>
-					</md-card-icon-actions>
-				</md-card-actions>
-			</md-card>
-		</md-content>
-	</md-grid-tile>
-	
-	<md-grid-tile>
-		<md-content>
-			<md-card>
-				<img src="assets/images/measuringPointCard.jpg">
-				<md-card-title>
-					<md-card-title-text>
-						<span class="md-headline">Messstelle anlegen</span>
-						<span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
-					</md-card-title-text>
-				</md-card-title>
-				<md-card-actions layout="row" layout-align="start center">
-					<md-button class="md-primary" ng-click="vm.showPopupForm($event, 'app/meteringPoint/meteringPoint.html')">Prozess Starten</md-button>
-					<md-card-icon-actions>
-						<md-button class="md-icon-button" aria-label="icon">
-							<md-icon md-svg-icon="icon"></md-icon>
-						</md-button>
-					</md-card-icon-actions>
-				</md-card-actions>
-			</md-card>
-		</md-content>
-	</md-grid-tile>
-	
-	<md-grid-tile>
-		<md-content>
-			<md-card>
-				<img src="assets/images/rateCard.jpg">
-				<md-card-title>
-					<md-card-title-text>
-						<span class="md-headline">Tarif anlegen</span>
-						<span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
-					</md-card-title-text>
-				</md-card-title>
-				<md-card-actions layout="row" layout-align="start center">
-					<md-button class="md-primary">Prozess Starten</md-button>
-					<md-card-icon-actions>
-						<md-button class="md-icon-button" aria-label="icon">
-							<md-icon md-svg-icon="icon"></md-icon>
-						</md-button>
-					</md-card-icon-actions>
-				</md-card-actions>
-			</md-card>
-		</md-content>
-	</md-grid-tile>
-	
-</md-grid-list>
-</div>
-<div>
-	<md-layout layout="column" style="background-color: #1A94C6; height: 25px;">&nbsp;</md-layout>
-</div>
+                <md-grid-tile>
+                    <md-content>
+                        <md-card>
+                            <img src="assets/images/marketPartnerCard.jpg">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Marktpartner anlegen</span>
+                                    <span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-actions layout="row" layout-align="start center">
+                                <md-button >Prozess Starten</md-button>
+                                <md-card-icon-actions>
+                                    <md-button class="md-icon-button" aria-label="icon">
+                                        <md-icon md-svg-icon="icon"></md-icon>
+                                    </md-button>
+                                </md-card-icon-actions>
+                            </md-card-actions>
+                        </md-card>
+                    </md-content>
+                </md-grid-tile>
+
+                <md-grid-tile>
+                    <md-content>
+                        <md-card>
+                            <img src="assets/images/connectionObjectCard.jpg">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Anschlussobjekt pflegen</span>
+                                    <span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-actions layout="row" layout-align="start center">
+                                <md-button >Prozess Starten</md-button>
+                                <md-card-icon-actions>
+                                    <md-button class="md-icon-button" aria-label="icon">
+                                        <md-icon md-svg-icon="icon"></md-icon>
+                                    </md-button>
+                                </md-card-icon-actions>
+                            </md-card-actions>
+                        </md-card>
+                    </md-content>
+                </md-grid-tile>
+
+                <md-grid-tile>
+                    <md-content>
+                        <md-card>
+                            <img src="assets/images/counterCard.jpg">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Zähler anlegen</span>
+                                    <span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-actions layout="row" layout-align="start center">
+                                <md-button >Prozess Starten</md-button>
+                                <md-card-icon-actions>
+                                    <md-button class="md-icon-button" aria-label="icon">
+                                        <md-icon md-svg-icon="icon"></md-icon>
+                                    </md-button>
+                                </md-card-icon-actions>
+                            </md-card-actions>
+                        </md-card>
+                    </md-content>
+                </md-grid-tile>
+
+                <md-grid-tile>
+                    <md-content>
+                        <md-card>
+                            <img src="assets/images/measuringPointCard.jpg">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Messstelle anlegen</span>
+                                    <span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-actions layout="row" layout-align="start center">
+                                <md-button class="md-primary" ng-click="vm.showPopupForm($event, 'app/meteringPoint/meteringPoint.html')">Prozess Starten</md-button>
+                                <md-card-icon-actions>
+                                    <md-button class="md-icon-button" aria-label="icon">
+                                        <md-icon md-svg-icon="icon"></md-icon>
+                                    </md-button>
+                                </md-card-icon-actions>
+                            </md-card-actions>
+                        </md-card>
+                    </md-content>
+                </md-grid-tile>
+
+                <md-grid-tile>
+                    <md-content>
+                        <md-card>
+                            <img src="assets/images/rateCard.jpg">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Tarif anlegen</span>
+                                    <span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-actions layout="row" layout-align="start center">
+                                <md-button >Prozess Starten</md-button>
+                                <md-card-icon-actions>
+                                    <md-button class="md-icon-button" aria-label="icon">
+                                        <md-icon md-svg-icon="icon"></md-icon>
+                                    </md-button>
+                                </md-card-icon-actions>
+                            </md-card-actions>
+                        </md-card>
+                    </md-content>
+                </md-grid-tile>
+
+            </md-grid-list>
+
+        </div>
+    </div>
+
+    <md-layout layout="column" class="footer-wizard site-footer">&nbsp;</md-layout>
+
 </div>
