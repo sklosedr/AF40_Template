@@ -21,6 +21,11 @@ md-input-container {
 
 .angular-google-map-container { height: 400px; }
 
+
+p.textfield {
+	width: 800px;
+}
+
 md-content {
 
     width: 100%;
