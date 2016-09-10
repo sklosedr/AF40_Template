@@ -9,6 +9,17 @@ public class Address {
 	private String city;
 	private String extraAddressLine;
 	
+	public Address() {}
+	
+	public Address(Long addressId, String street, String streetNumber, String zipCode, String city, String extraAddressLine) {
+		this.addressId = addressId;
+		this.street = street;
+		this.streetNumber = streetNumber;
+		this.zipCode = zipCode;
+		this.city = city;
+		this.extraAddressLine = extraAddressLine;
+	}
+
 	public Long getAddressId() {
 		return addressId;
 	}

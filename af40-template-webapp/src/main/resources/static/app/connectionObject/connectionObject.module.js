@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('fastTrackApp.meteringPoint', ['ngMaterial', 'mdSteppers', 'fastTrackApp.connectionObject', 'fastTrackApp.gateway'])
+        .module('fastTrackApp.connectionObject', [])
         .config(config);
 
     /** @ngInject */

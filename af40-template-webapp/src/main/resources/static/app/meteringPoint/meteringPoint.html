@@ -21,7 +21,7 @@
 						</md-input-container>
 					</md-step-body>
 					<md-step-actions layout="row" layout-align="space-between">
-						<md-button class="md-primary" ng-click="closeDialog()">Abbrechen</md-button>
+						<md-button ng-click="closeDialog()">Abbrechen</md-button>
 						<md-button class="md-primary md-raised" ng-click="vm.forward()">Weiter</md-button>
 					</md-step-actions>
 				</md-step>
@@ -46,8 +46,7 @@
 					        	<span md-highlight-text="vm.searchText" md-highlight-flags="^i">{{item.display}}</span>
 					        </md-item-template>
 					        <md-not-found>
-								No states matching "{{vm.searchText}}" were found.
-								<a ng-click="vm.newState(vm.searchText)">Create a new one!</a>
+								Es wurde kein Anschlussobjekt zur Adresse "{{vm.searchText}}" gefunden.
 					        </md-not-found>
 					      </md-autocomplete>						
 						</md-content>
@@ -65,9 +64,9 @@
 						</md-input-container>
 					</md-step-body>
 					<md-step-actions layout="row" layout-align="space-between">
-						<md-button class="md-primary" ng-click="closeDialog()">Abbrechen</md-button>
+						<md-button ng-click="closeDialog()">Abbrechen</md-button>
 						<md-button-container>
-							<md-button class="md-primary" ng-click="vm.back()">Zurück</md-button>
+							<md-button ng-click="vm.back()">Zurück</md-button>
 							<md-button class="md-primary md-raised" ng-click="vm.forward()">Weiter</md-button>
 						</md-button-container>
 					</md-step-actions>
@@ -76,7 +75,6 @@
 				
 				<md-step md-label="Mit Gateway verbinden">
 					<md-step-body>
-						<h3>Mit welchem Gateway soll die Messstelle verbunden werden?</h3>
 						<h3>Mit welchem Gateway soll die Messstelle verbunden werden?</h3>
 						<p class="textfield">An dem Anschlussobjekt gibt es bereits Messstellen, die mit den unten aufgeführten Smart Meter Gateways verbunden sind.
 						Verbinden Sie die neue Messstelle mit einem der bestehenden Gateways oder geben Sie die Bezeichnung eines neuen Gateways ein,
@@ -114,9 +112,9 @@
 						</md-radio-group>						
 					</md-step-body>
 					<md-step-actions layout="row" layout-align="space-between">
-						<md-button class="md-primary" ng-click="closeDialog()">Abbrechen</md-button>
+						<md-button ng-click="closeDialog()">Abbrechen</md-button>
 						<md-button-container>
-							<md-button class="md-primary" ng-click="vm.back()">Zurück</md-button>
+							<md-button ng-click="vm.back()">Zurück</md-button>
 							<md-button class="md-primary md-raised" ng-click="vm.forward()">Weiter</md-button>
 						</md-button-container>
 					</md-step-actions>
@@ -144,9 +142,9 @@
 						</div>
 					</md-step-body>
 					<md-step-actions layout="row" layout-align="space-between">
-						<md-button class="md-primary" ng-click="closeDialog()">Abbrechen</md-button>
+						<md-button ng-click="closeDialog()">Abbrechen</md-button>
 						<md-button-container>
-							<md-button class="md-primary" ng-click="vm.back()">Zurück</md-button>
+							<md-button ng-click="vm.back()">Zurück</md-button>
 							<md-button class="md-primary md-raised" ng-click="vm.createMeteringPoint()">Anlegen</md-button>
 						</md-button-container>
 					</md-step-actions>

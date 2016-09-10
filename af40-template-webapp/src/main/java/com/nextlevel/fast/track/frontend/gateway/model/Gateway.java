@@ -1,4 +1,4 @@
-package com.nextlevel.fast.track.frontend.metering.point.model;
+package com.nextlevel.fast.track.frontend.gateway.model;
 
 import com.nextlevel.fast.track.frontend.model.AdditionalAddressInformation;
 
@@ -13,6 +13,17 @@ public class Gateway {
 	private Long numberOfGasConnections;
 	
 	private Long numberOfWaterConnections;
+	
+	
+
+	public Gateway() {}
+
+	public Gateway(String gatewayId, Long numberOfPowerConnections, Long numberOfGasConnections, Long numberOfWaterConnections) {
+		this.gatewayId = gatewayId;
+		this.numberOfPowerConnections = numberOfPowerConnections;
+		this.numberOfGasConnections = numberOfGasConnections;
+		this.numberOfWaterConnections = numberOfWaterConnections;
+	}
 
 	public String getGatewayId() {
 		return gatewayId;

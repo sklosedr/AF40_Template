@@ -7,7 +7,7 @@
         .controller('MeteringPointController', MeteringPointController);
     
     /** @ngInject */
-    function MeteringPointController($mdStepper, $http, $mdDialog, $log, baseUrl)
+    function MeteringPointController($mdStepper, $http, $mdDialog, $log, ConnectionObjectService, GatewayService, baseUrl)
     {
     	var vm = this;
     	
@@ -34,9 +34,16 @@
     	
     	vm.simulateQuery = true;
     	vm.isDisabled    = false;
-
+    	
         // list of `state` value/display objects
-    	vm.states        = loadAll();
+    	ConnectionObjectService.getConnectionObjects().success(function (result) {
+    		vm.states = result.map(function (address) {
+                return {
+                    value: address.street.toLowerCase(),
+                    display: address.street + ' ' + address.streetNumber + ', ' + address.zipCode + ' ' + address.city
+                  };
+    		});   		
+    	});
     	vm.querySearch   = querySearch;
     	vm.selectedItemChange = selectedItemChange;
     	vm.searchTextChange   = searchTextChange;
@@ -76,22 +83,6 @@
           }
 
           /**
-           * Build `states` list of key/value pairs
-           */
-          function loadAll() {
-            var allStates = 'Nattermannallee 1, 50829 Köln; Goldenbergstraße 2, 50354 Hürth; Parkgürtel 24, 50823 Köln;\
-            	Siegburger Str. 229, 50679 Köln; Sellerstraße 16, 13353 Berlin; Glockengießerwall 2, 20095 Hamburg;\
-            	Glockengießerwall 2, 20095 Hamburg';
-
-            return allStates.split(/; +/g).map( function (state) {
-              return {
-                value: state.toLowerCase(),
-                display: state
-              };
-            });
-          }
-
-          /**
            * Create filter function for a query string
            */
           function createFilterFor(query) {
@@ -106,27 +97,10 @@
       	  vm.isNewGateway = function() {
       		  return vm.selectedGateway === 'new_gateway';
       	  }
-          
-          
-          vm.gateways = [
-            {
-            	gatewayId: 'EPPC0287658934'            	
-            },
-            {
-            	gatewayId: 'ETHE0112345678'            	
-            },
-            {
-            	gatewayId: 'ETHE0992347778'            	
-            },
-            {
-            	gatewayId: 'ETHE0992347779'            	
-            },
-            {
-            	gatewayId: 'ETHE0992347780'            	
-            }
-          ];
-          
-          
+      	  
+      	  GatewayService.getGateways().success(function (result) {
+      		  vm.gateways = result;      		  
+      	  });
     	
     }
     
