@@ -32,6 +32,7 @@
     		$mdDialog.hide();
     	}
     	
+    	vm.selectedItem = '';
     	vm.simulateQuery = true;
     	vm.isDisabled    = false;
     	
