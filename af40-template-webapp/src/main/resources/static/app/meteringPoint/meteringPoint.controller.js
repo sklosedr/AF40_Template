@@ -11,8 +11,6 @@
     {
     	var vm = this;
     	
-    	vm.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
-    	
     	vm.meteringPoint = {};
     	vm.meteringPoint.address = {};
     	vm.meteringPoint.additionalAddressInformation = {};
@@ -41,7 +39,9 @@
     		vm.states = result.map(function (address) {
                 return {
                     value: address.street.toLowerCase(),
-                    display: address.street + ' ' + address.streetNumber + ', ' + address.zipCode + ' ' + address.city
+                    display: address.street + ' ' + address.streetNumber + ', ' + address.zipCode + ' ' + address.city,
+                    latitude: address.latitude,
+                    longitude: address.longitude
                   };
     		});   		
     	});
@@ -81,6 +81,9 @@
 
           function selectedItemChange(item) {
             $log.info('Item changed to ' + JSON.stringify(item));
+            if( vm.selectedItem ) {
+            	vm.map = { center: { latitude: vm.selectedItem.latitude, longitude: vm.selectedItem.longitude }, zoom: 15 };
+            }
           }
 
           /**

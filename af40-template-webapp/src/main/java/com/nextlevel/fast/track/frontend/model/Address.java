@@ -8,16 +8,20 @@ public class Address {
 	private String zipCode;
 	private String city;
 	private String extraAddressLine;
+	private Double latitude;
+	private Double longitude;
 	
 	public Address() {}
 	
-	public Address(Long addressId, String street, String streetNumber, String zipCode, String city, String extraAddressLine) {
+	public Address(Long addressId, String street, String streetNumber, String zipCode, String city, String extraAddressLine, Double latitude, Double longitude) {
 		this.addressId = addressId;
 		this.street = street;
 		this.streetNumber = streetNumber;
 		this.zipCode = zipCode;
 		this.city = city;
 		this.extraAddressLine = extraAddressLine;
+		this.latitude = latitude;
+		this.longitude = longitude;
 	}
 
 	public Long getAddressId() {
@@ -60,6 +64,20 @@ public class Address {
 	}
 	public void setExtraAddressLine(String extraAddressLine) {
 		this.extraAddressLine = extraAddressLine;
+	}
+	
+	public Double getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
+	}
+	
+	public Double getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(Double longitude) {
+		this.longitude = longitude;
 	}
 	
 	@Override
