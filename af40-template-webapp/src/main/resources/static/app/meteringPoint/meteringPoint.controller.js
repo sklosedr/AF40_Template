@@ -7,7 +7,7 @@
         .controller('MeteringPointController', MeteringPointController);
     
     /** @ngInject */
-    function MeteringPointController($mdStepper, $http, $mdDialog, $log, ConnectionObjectService, GatewayService, baseUrl)
+    function MeteringPointController($mdStepper, $http, $mdDialog, $log, $mdToast, ConnectionObjectService, GatewayService, baseUrl)
     {
     	var vm = this;
     	
@@ -26,7 +26,12 @@
     	}
     	
     	vm.createMeteringPoint = function() {
-    		alert('Messstelle erstellt');
+    	    $mdToast.show(
+    	    	      $mdToast.simple()
+    	    	        .textContent('Messstelle erstellt')
+    	    	        .position('bottom left')
+    	    	        .hideDelay(10000)
+    	    	    );
     		$mdDialog.hide();
     	}
     	
