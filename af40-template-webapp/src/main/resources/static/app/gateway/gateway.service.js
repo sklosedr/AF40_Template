@@ -12,6 +12,9 @@
     	return {
     		getGateways : function() {
     			return $http.get(baseUrl + "/gateway");
+    		},
+    		getGatewaysForAddress : function(addressId) {
+    			return $http.get(baseUrl + "/gateway/address/" + addressId);
     		}
     	}
     }

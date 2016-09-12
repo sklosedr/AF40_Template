@@ -45,6 +45,7 @@
                 return {
                     value: address.street.toLowerCase(),
                     display: address.street + ' ' + address.streetNumber + ', ' + address.zipCode + ' ' + address.city,
+                    addressId: address.addressId,
                     latitude: address.latitude,
                     longitude: address.longitude
                   };
@@ -88,6 +89,9 @@
             $log.info('Item changed to ' + JSON.stringify(item));
             if( vm.selectedItem ) {
             	vm.map = { center: { latitude: vm.selectedItem.latitude, longitude: vm.selectedItem.longitude }, zoom: 15 };
+            	GatewayService.getGatewaysForAddress(vm.selectedItem.addressId).success(function (result) {
+              	  vm.gateways = result;      		  
+              	});
             }
           }
 

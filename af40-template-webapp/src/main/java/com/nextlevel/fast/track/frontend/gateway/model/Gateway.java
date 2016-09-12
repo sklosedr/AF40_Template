@@ -14,15 +14,16 @@ public class Gateway {
 	
 	private Long numberOfWaterConnections;
 	
-	
+	private Long numberOfHeatConnections;
 
 	public Gateway() {}
 
-	public Gateway(String gatewayId, Long numberOfPowerConnections, Long numberOfGasConnections, Long numberOfWaterConnections) {
+	public Gateway(String gatewayId, Long numberOfPowerConnections, Long numberOfGasConnections, Long numberOfWaterConnections, Long numberOfHeatConnections) {
 		this.gatewayId = gatewayId;
 		this.numberOfPowerConnections = numberOfPowerConnections;
 		this.numberOfGasConnections = numberOfGasConnections;
 		this.numberOfWaterConnections = numberOfWaterConnections;
+		this.numberOfHeatConnections = numberOfHeatConnections;
 	}
 
 	public String getGatewayId() {
@@ -63,6 +64,14 @@ public class Gateway {
 
 	public void setNumberOfWaterConnections(Long numberOfWaterConnections) {
 		this.numberOfWaterConnections = numberOfWaterConnections;
+	}
+	
+	public Long getNumberOfHeatConnections() {
+		return numberOfHeatConnections;
+	}
+	
+	public void setNumberOfHeatConnections(Long numberOfHeatConnections) {
+		this.numberOfHeatConnections = numberOfHeatConnections;
 	}
 
 }

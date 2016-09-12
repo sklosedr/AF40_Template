@@ -15,7 +15,20 @@ public class MeteringPoint {
 	
 	private Address address;
 	
+	private MeteringPointType meteringPointType;
+	
 	private AdditionalAddressInformation additionalAddressInformation;
+	
+	public MeteringPoint() {}
+	
+	public MeteringPoint(Long meteringPointId, String meteringPointDescription, String internalDescription, String gatewayId, Address address, MeteringPointType meteringPointType) {
+		this.meteringPointId = meteringPointId;
+		this.meteringPointDescription = meteringPointDescription;
+		this.internalDescription = internalDescription;
+		this.gatewayId = gatewayId;
+		this.address = address;
+		this.meteringPointType = meteringPointType;
+	}
 
 	public Long getMeteringPointId() {
 		return meteringPointId;
@@ -63,6 +76,14 @@ public class MeteringPoint {
 
 	public void setAdditionalAddressInformation(AdditionalAddressInformation additionalAddressInformation) {
 		this.additionalAddressInformation = additionalAddressInformation;
+	}
+	
+	public MeteringPointType getMeteringPointType() {
+		return meteringPointType;
+	}
+	
+	public void setMeteringPointType(MeteringPointType meteringPointType) {
+		this.meteringPointType = meteringPointType;
 	}
 	
 }
