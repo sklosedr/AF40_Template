@@ -1,13 +1,17 @@
 <div layout="column" flex id="content" role="main" class="site" style="background-color: #EEEEEE">
     <div class="site-header">
-        <md-layout layout="column" style="background-color: #03a9f4; height: 25px;">&nbsp;</md-layout>
+        <md-layout layout="column" style="background-color: #0288d1; height: 25px;">&nbsp;</md-layout>
         <md-whiteframe class="md-whiteframe-5dp layout-align-left-center layout-row" layout-align="left center" style="height: 150px; padding: 10px; padding-left: 100px; background-color: #FFFFFF">
             <span><img src="assets/logo/logo.png" style="width: 75px; height: 75px; "></span>
             <span style="padding-left: 25px; font-weight:bold;font-size:1.5rem;color:#616161;">myBusiness smartEnergy: Fast Track</span>
         </md-whiteframe>
     </div>
 
-    <div class="margin-top layout-column site-content">
+	<div>
+		<md-layout layout="columns"><span class="nli-header-1">Wählen Sie einen Prozess und beginnen Sie die Inbetriebnahme</span></md-layout>
+	</div>
+	
+    <div class="layout-column site-content">
         <div class="flex">
 
             <md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-lg="4" md-cols="4" md-row-height="4:5" md-gutter-sm="8px" md-gutter-md="8px" md-gutter-lg="8px">
@@ -33,7 +37,28 @@
                     </md-content>
                 </md-grid-tile>
 
-
+                <md-grid-tile>
+                    <md-content>
+                        <md-card>
+                            <img src="assets/images/measuringPointCard.jpg">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Messstelle anlegen</span>
+                                    <span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-actions layout="row" layout-align="start center">
+                                <md-button class="md-primary" ng-click="vm.showPopupForm($event, 'app/meteringPoint/meteringPoint.html')">Prozess Starten</md-button>
+                                <md-card-icon-actions>
+                                    <md-button class="md-icon-button" aria-label="icon">
+                                        <md-icon md-svg-icon="icon"></md-icon>
+                                    </md-button>
+                                </md-card-icon-actions>
+                            </md-card-actions>
+                        </md-card>
+                    </md-content>
+                </md-grid-tile>
+                
                 <md-grid-tile>
                     <md-content>
                         <md-card>
@@ -100,27 +125,6 @@
                     </md-content>
                 </md-grid-tile>
 
-                <md-grid-tile>
-                    <md-content>
-                        <md-card>
-                            <img src="assets/images/measuringPointCard.jpg">
-                            <md-card-title>
-                                <md-card-title-text>
-                                    <span class="md-headline">Messstelle anlegen</span>
-                                    <span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
-                                </md-card-title-text>
-                            </md-card-title>
-                            <md-card-actions layout="row" layout-align="start center">
-                                <md-button class="md-primary" ng-click="vm.showPopupForm($event, 'app/meteringPoint/meteringPoint.html')">Prozess Starten</md-button>
-                                <md-card-icon-actions>
-                                    <md-button class="md-icon-button" aria-label="icon">
-                                        <md-icon md-svg-icon="icon"></md-icon>
-                                    </md-button>
-                                </md-card-icon-actions>
-                            </md-card-actions>
-                        </md-card>
-                    </md-content>
-                </md-grid-tile>
 
                 <md-grid-tile>
                     <md-content>

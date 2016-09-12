@@ -9,7 +9,7 @@
     	$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
     	$mdThemingProvider.theme('default')
 	    	.primaryPalette('orange')
-	        .accentPalette('light-blue')
+	        .accentPalette('blue')
 	        .warnPalette('deep-orange')
 	        .backgroundPalette('grey'); 
     });
