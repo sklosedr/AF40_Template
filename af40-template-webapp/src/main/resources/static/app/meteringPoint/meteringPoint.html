@@ -7,8 +7,8 @@
 				md-mobile-step-text="$ctrl.isMobileStepText"
 				md-vertical="$ctrl.isVertical" 
 				md-linear="$ctrl.isLinear"
-				md-alternative="$ctrl.isAlternative"
-				class="md-steppers-alternative">
+				md-alternative="$ctrl.isAlternative">
+<!-- 				class="md-steppers-alternative" -->
 				
 				<md-step md-label="Messstelle beschreiben">
 					<md-step-body>
@@ -82,17 +82,19 @@
 						Verbinden Sie die neue Messstelle mit einem der bestehenden Gateways oder geben Sie die Bezeichnung eines neuen Gateways ein,
 						mit dem die Messstelle verbunden werden soll:</p>
 						
-						<md-radio-group ng-model="vm.meteringPoint.gatewayId" >
+						<hr />
+						
+						<md-radio-group ng-model="vm.meteringPoint.gatewayId" style="max-height: 300px;overflow-y: scroll;">
 							<div flex class="row" layout='row' layout-padding layout-align="start center" >
-							<md-radio-button flex value="new_gateway" class="md-primary" >
-								Messstelle mit einem neuen Gateway verbinden
-						    </md-radio-button>
-						    <div layout="row" class="row" ng-show="vm.isNewGateway()" flex>
-								<md-input-container>
-									<label class="md-no-float">GatewayID</label>
-									<input ng-model="vm.newGatewayId" required md-minlength="1" type="text">
-								</md-input-container>
-						    </div>
+								<md-radio-button flex value="new_gateway" class="md-primary" >
+									Messstelle mit einem neuen Gateway verbinden
+							    </md-radio-button>
+							    <div layout="row" class="row" ng-show="vm.isNewGateway()" flex>
+									<md-input-container>
+										<label class="md-no-float">GatewayID</label>
+										<input ng-model="vm.newGatewayId" required md-minlength="1" type="text">
+									</md-input-container>
+							    </div>
 							</div>
 							<div ng-repeat='gateway in vm.gateways' class="row">
 								<div flex layout='row' layout-padding layout-align="start center" >
@@ -111,7 +113,8 @@
 						          </div>
 								</div>
 							</div>
-						</md-radio-group>						
+						</md-radio-group>
+										
 					</md-step-body>
 					<md-step-actions layout="row" layout-align="space-between">
 						<md-button ng-click="closeDialog()">Abbrechen</md-button>

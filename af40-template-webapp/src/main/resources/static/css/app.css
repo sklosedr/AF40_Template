@@ -35,6 +35,13 @@ label.md-no-float {
 	left: 2px !important;
 }
 
+hr {
+	width: 100%;
+	height: 1px;
+	border: none;
+	background: #AAA;
+}
+
 a.md-button.md-default-theme.md-primary.md-raised, a.md-button.md-primary.md-raised,
 	a.md-button.md-default-theme.md-primary.md-fab, a.md-button.md-primary.md-fab,
 	.md-button.md-default-theme.md-primary.md-raised, .md-button.md-primary.md-raised,
