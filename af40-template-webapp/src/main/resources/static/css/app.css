@@ -158,3 +158,15 @@ a.md-button.md-default-theme.md-primary.md-raised:not ([disabled] ):hover,
 	width: 350px;
 	margin-bottom: 0;
 }
+
+.no-margin-bottom {
+	margin-bottom: 0;
+}
+
+.md-checked {
+	background-color: #F4F4F4;
+}
+
+.gateway-hover:hover {
+	background-color: #F4F4F4;
+}
