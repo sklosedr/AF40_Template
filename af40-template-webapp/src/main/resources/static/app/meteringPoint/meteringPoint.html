@@ -86,14 +86,14 @@
 						<hr />
 						
 						<md-radio-group ng-model="vm.meteringPoint.gatewayId" style="max-height: 300px;overflow-y: scroll;">
-							<div flex class="row" layout='row' layout-padding layout-align="start center" >
+							<div flex class="row" layout='column' layout-padding layout-align="start left" >
 								<md-radio-button flex ng-value="vm.newGatewayId" ng-model="vm.meteringPoint.gatewayId" ng-click="vm.createNewGateway()" class="md-primary" >
 									Messstelle mit einem neuen Gateway verbinden
 							    </md-radio-button>
-							    <div layout="row" class="row" ng-show="vm.isNewGateway()" flex>
+							    <div layout="row" class="row gateway-input" ng-show="vm.isNewGateway()" flex>
 									<md-input-container>
 										<label class="md-no-float">GatewayID</label>
-										<input ng-model="vm.newGatewayId" required md-minlength="1" type="text" ng-change="vm.newGatewayIdChanged()">
+										<input ng-model="vm.newGatewayId" required md-minlength="1" type="text" ng-change="vm.newGatewayIdChanged()" class="gatewag-id-input">
 									</md-input-container>
 							    </div>
 							</div>
@@ -101,12 +101,10 @@
 								<div flex layout='row' layout-padding layout-align="start center" >
 
 						          <md-radio-button flex ng-value="gateway.gatewayId" class="md-primary" ng-click="vm.useExistingGateway()">
-
 						          	{{ gateway.gatewayId }}
 						          </md-radio-button>
 
 						          <div flex style="max-width:350px;" class="gateway-list">
-									<span>2x</span>
 									<span>{{ gateway.numberOfPowerConnections }}x</span>
 									<img src="assets/icons/power-active.png" class="md-avatar" alt="Elektrizität">
 									<span>{{ gateway.numberOfGasConnections }}x</span>
@@ -147,11 +145,13 @@
 						  	</div>
 						  	<h4>Einbauort:</h4>
 						  	<div layout="row" class="margin-top">
-						  		<div flex>{{ vm.selectedItem.display }}</div>
-						  		<div flex>\\ Gebäude {{ vm.meteringPoint.additionalAddressInformation.building }}
-						  				Etage {{ vm.meteringPoint.additionalAddressInformation.floor }}
+						  		<div flex>{{ vm.selectedItem.display1 }} \\  Gebäude {{ vm.meteringPoint.additionalAddressInformation.building }}, 
+						  				Etage {{ vm.meteringPoint.additionalAddressInformation.floor }}, 
 						  				Raum {{ vm.meteringPoint.additionalAddressInformation.room }}
 						  		</div>
+						  	</div>
+						  	<div layout="row" class="margin-top">
+						  		<div flex>{{ vm.selectedItem.display2 }}</div>
 						  	</div>
 						  	<div layout="row" class="margin-top">
 						  		<div flex><b>Gateway-ID:</b></div>

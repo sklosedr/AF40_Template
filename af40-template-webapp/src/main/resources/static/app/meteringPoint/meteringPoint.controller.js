@@ -48,6 +48,8 @@
                 return {
                     value: address.street.toLowerCase(),
                     display: address.street + ' ' + address.streetNumber + ', ' + address.zipCode + ' ' + address.city,
+                    display1: address.street + ' ' + address.streetNumber,
+                    display2: address.zipCode + ' ' + address.city,
                     addressId: address.addressId,
                     street : address.street,
                     streetNumber : address.streetNumber,
