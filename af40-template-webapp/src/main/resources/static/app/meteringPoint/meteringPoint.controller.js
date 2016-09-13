@@ -151,6 +151,13 @@
       		  }
       		  return text;
       	  }
+      	  
+      	  vm.hasInactiveConections = function(number) {
+      		  if (number === 0) {
+      			  return 'in';
+      		  }
+      		  return '';
+      	  }
     	
     }
     
