@@ -90,7 +90,7 @@
 								<md-radio-button flex ng-value="vm.newGatewayId" ng-model="vm.meteringPoint.gatewayId" ng-click="vm.createNewGateway()" class="md-primary" >
 									Messstelle mit einem neuen Gateway verbinden
 							    </md-radio-button>
-							    <div layout="row" class="row gateway-input" ng-show="vm.isNewGateway()" flex>
+							    <div layout="row" class="row gateway-input" ng-show="vm.isNewGateway" flex>
 									<md-input-container>
 										<label class="md-no-float">GatewayID</label>
 										<input ng-model="vm.newGatewayId" required md-minlength="1" type="text" ng-change="vm.newGatewayIdChanged()" class="gatewag-id-input">
@@ -145,9 +145,9 @@
 						  	</div>
 						  	<h4>Einbauort:</h4>
 						  	<div layout="row" class="margin-top">
-						  		<div flex>{{ vm.selectedItem.display1 }} \\  Gebäude {{ vm.meteringPoint.additionalAddressInformation.building }}, 
-						  				Etage {{ vm.meteringPoint.additionalAddressInformation.floor }}, 
-						  				Raum {{ vm.meteringPoint.additionalAddressInformation.room }}
+						  		<div flex>
+						  			{{ vm.selectedItem.display1 }}
+							  		{{ vm.showAdditionalAddressInformation(vm.meteringPoint.additionalAddressInformation) }}
 						  		</div>
 						  	</div>
 						  	<div layout="row" class="margin-top">

@@ -133,6 +133,24 @@
       	  GatewayService.getGateways().success(function (result) {
       		  vm.gateways = result;      		  
       	  });
+      	  
+      	  vm.showAdditionalAddressInformation = function(additionalAddressInformation) {
+      		  var addressInfo = [];
+      		  if (additionalAddressInformation.building) {
+      			addressInfo.push('Gebäude ' + additionalAddressInformation.building);
+      		  }
+      		  if (additionalAddressInformation.floor) {
+      			addressInfo.push('Etage ' + additionalAddressInformation.floor);
+      		  }
+      		  if (additionalAddressInformation.room) {
+      			addressInfo.push('Raum ' + additionalAddressInformation.room);
+      		  }
+      		  var text = addressInfo.join(', ');
+      		  if (text) {
+      			  text = '\\\\ ' + text;
+      		  }
+      		  return text;
+      	  }
     	
     }
     
