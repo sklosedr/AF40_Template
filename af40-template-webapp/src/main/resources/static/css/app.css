@@ -22,8 +22,7 @@ md-content {
 	background-color: transparent;
 }
 
-.md-select-menu-container md-content
-{
+.md-select-menu-container md-content {
 	background-color: #FFF;
 }
 
@@ -148,4 +147,8 @@ a.md-button.md-default-theme.md-primary.md-raised:not ([disabled] ):hover,
 	position: absolute;
 	right: 0;
 	margin-top: 0;
+}
+
+:focus {
+	outline: none;
 }

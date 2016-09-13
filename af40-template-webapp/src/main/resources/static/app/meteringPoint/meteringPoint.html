@@ -82,33 +82,38 @@
 						Verbinden Sie die neue Messstelle mit einem der bestehenden Gateways oder geben Sie die Bezeichnung eines neuen Gateways ein,
 						mit dem die Messstelle verbunden werden soll:</p>
 						
+
 						<hr />
 						
 						<md-radio-group ng-model="vm.meteringPoint.gatewayId" style="max-height: 300px;overflow-y: scroll;">
 							<div flex class="row" layout='row' layout-padding layout-align="start center" >
-								<md-radio-button flex value="new_gateway" class="md-primary" >
+								<md-radio-button flex ng-value="vm.newGatewayId" ng-model="vm.meteringPoint.gatewayId" ng-click="vm.createNewGateway()" class="md-primary" >
 									Messstelle mit einem neuen Gateway verbinden
 							    </md-radio-button>
 							    <div layout="row" class="row" ng-show="vm.isNewGateway()" flex>
 									<md-input-container>
 										<label class="md-no-float">GatewayID</label>
-										<input ng-model="vm.newGatewayId" required md-minlength="1" type="text">
+										<input ng-model="vm.newGatewayId" required md-minlength="1" type="text" ng-change="vm.newGatewayIdChanged()">
 									</md-input-container>
 							    </div>
 							</div>
 							<div ng-repeat='gateway in vm.gateways' class="row">
 								<div flex layout='row' layout-padding layout-align="start center" >
-						          <md-radio-button flex ng-value="gateway.gatewayId" class="md-primary radio-in-list" >
+
+						          <md-radio-button flex ng-value="gateway.gatewayId" class="md-primary" ng-click="vm.useExistingGateway()">
+
 						          	{{ gateway.gatewayId }}
 						          </md-radio-button>
+
 						          <div flex style="max-width:350px;" class="gateway-list">
 									<span>2x</span>
+									<span>{{ gateway.numberOfPowerConnections }}x</span>
 									<img src="assets/icons/power-active.png" class="md-avatar" alt="Elektrizität">
-									<span>1x</span>
+									<span>{{ gateway.numberOfGasConnections }}x</span>
 									<img src="assets/icons/gas-active.png" class="md-avatar" alt="Gas">
-									<span>1x</span>
+									<span>{{ gateway.numberOfWaterConnections }}x</span>
 									<img src="assets/icons/water-active.png" class="md-avatar" alt="Wasser">
-									<span>0x</span>
+									<span>{{ gateway.numberOfHeatConnections }}x</span>
 									<img src="assets/icons/heat-inactive.png" class="md-avatar" alt="Wärme">
 						          </div>
 								</div>
