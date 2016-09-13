@@ -100,13 +100,13 @@
 						          	{{ gateway.gatewayId }}
 						          </md-radio-button>
 						          <div flex style="max-width:350px;">
-									<span>2x</span>
+									<span>{{ gateway.numberOfPowerConnections }}x</span>
 									<img src="assets/icons/power-active.png" class="md-avatar" alt="Elektrizität">
-									<span>1x</span>
+									<span>{{ gateway.numberOfGasConnections }}x</span>
 									<img src="assets/icons/gas-active.png" class="md-avatar" alt="Gas">
-									<span>1x</span>
+									<span>{{ gateway.numberOfWaterConnections }}x</span>
 									<img src="assets/icons/water-active.png" class="md-avatar" alt="Wasser">
-									<span>0x</span>
+									<span>{{ gateway.numberOfHeatConnections }}x</span>
 									<img src="assets/icons/heat-inactive.png" class="md-avatar" alt="Wärme">
 						          </div>
 								</div>

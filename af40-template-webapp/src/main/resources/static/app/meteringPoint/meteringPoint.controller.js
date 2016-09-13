@@ -7,11 +7,12 @@
         .controller('MeteringPointController', MeteringPointController);
     
     /** @ngInject */
-    function MeteringPointController($mdStepper, $http, $mdDialog, $log, $mdToast, ConnectionObjectService, GatewayService, baseUrl)
+    function MeteringPointController($mdStepper, $http, $mdDialog, $log, $mdToast, ConnectionObjectService, GatewayService, MeteringPointService, baseUrl)
     {
     	var vm = this;
     	
     	vm.meteringPoint = {};
+    	vm.meteringPoint.meteringPointType = 'POWER';
     	vm.meteringPoint.address = {};
     	vm.meteringPoint.additionalAddressInformation = {};
     	
@@ -26,6 +27,7 @@
     	}
     	
     	vm.createMeteringPoint = function() {
+    		MeteringPointService.createMeteringPoint(vm.meteringPoint);
     	    $mdToast.show(
     	    	      $mdToast.simple()
     	    	        .textContent('Messstelle erstellt')
@@ -47,6 +49,11 @@
                     value: address.street.toLowerCase(),
                     display: address.street + ' ' + address.streetNumber + ', ' + address.zipCode + ' ' + address.city,
                     addressId: address.addressId,
+                    street : address.street,
+                    streetNumber : address.streetNumber,
+                    zipCode : address.zipCode,
+                    city : address.city,
+                    extraAddressLine : address.extraAddressLine,
                     latitude: address.latitude,
                     longitude: address.longitude
                   };
@@ -90,6 +97,7 @@
             $log.info('Item changed to ' + JSON.stringify(item));
             if( vm.selectedItem ) {
             	vm.map = { center: { latitude: vm.selectedItem.latitude, longitude: vm.selectedItem.longitude }, zoom: 15 };
+            	vm.meteringPoint.address = vm.selectedItem;
             	GatewayService.getGatewaysForAddress(vm.selectedItem.addressId).success(function (result) {
               	  vm.gateways = result;      		  
               	});

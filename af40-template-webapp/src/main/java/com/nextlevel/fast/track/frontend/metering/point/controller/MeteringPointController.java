@@ -3,6 +3,7 @@ package com.nextlevel.fast.track.frontend.metering.point.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +21,11 @@ public class MeteringPointController {
 	@RequestMapping(method = RequestMethod.GET)
 	public List<MeteringPoint> getMeteringPoints() {
 		return meteringPointService.getMeteringPoints();
+	}
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public MeteringPoint createMeteringPoint(@RequestBody MeteringPoint meteringPoint) {
+		return meteringPointService.createMeteringPoint(meteringPoint);
 	}
 	
 
