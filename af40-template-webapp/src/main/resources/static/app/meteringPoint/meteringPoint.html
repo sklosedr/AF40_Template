@@ -82,21 +82,21 @@
 						Verbinden Sie die neue Messstelle mit einem der bestehenden Gateways oder geben Sie die Bezeichnung eines neuen Gateways ein,
 						mit dem die Messstelle verbunden werden soll:</p>
 						
-						<md-radio-group ng-model="vm.meteringPoint.gatewayId" >
+						<md-radio-group ng-model="vm.meteringPoint.gatewayId">
 							<div flex class="row" layout='row' layout-padding layout-align="start center" >
-							<md-radio-button flex value="new_gateway" class="md-primary" >
+							<md-radio-button flex ng-value="vm.newGatewayId" ng-model="vm.meteringPoint.gatewayId" ng-click="vm.createNewGateway()" class="md-primary" >
 								Messstelle mit einem neuen Gateway verbinden
 						    </md-radio-button>
-						    <div layout="row" class="row" ng-show="vm.isNewGateway()" flex>
+						    <div layout="row" class="row" ng-show="vm.isNewGateway" flex>
 								<md-input-container>
 									<label class="md-no-float">GatewayID</label>
-									<input ng-model="vm.newGatewayId" required md-minlength="1" type="text">
+									<input ng-model="vm.newGatewayId" required md-minlength="1" type="text" ng-change="vm.newGatewayIdChanged()">
 								</md-input-container>
 						    </div>
 							</div>
 							<div ng-repeat='gateway in vm.gateways' class="row">
 								<div flex layout='row' layout-padding layout-align="start center" >
-						          <md-radio-button flex ng-value="gateway.gatewayId" class="md-primary" >
+						          <md-radio-button flex ng-value="gateway.gatewayId" class="md-primary" ng-click="vm.useExistingGateway()">
 						          	{{ gateway.gatewayId }}
 						          </md-radio-button>
 						          <div flex style="max-width:350px;">

@@ -37,7 +37,8 @@
     	
     	vm.selectedItem = '';
     	vm.simulateQuery = true;
-    	vm.isDisabled    = false;
+    	vm.isDisabled = false;
+    	vm.isNewGateway = true;
     	
         // list of `state` value/display objects
     	ConnectionObjectService.getConnectionObjects().success(function (result) {
@@ -107,9 +108,17 @@
 
           }
           
-      	  vm.isNewGateway = function() {
-      		  return vm.selectedGateway === 'new_gateway';
-      	  }
+          vm.createNewGateway = function() {
+        	  vm.isNewGateway = true;
+          }
+          
+          vm.newGatewayIdChanged = function() {
+        	  vm.meteringPoint.gatewayId = vm.newGatewayId;
+          }
+          
+          vm.useExistingGateway = function() {
+        	  vm.isNewGateway = false;
+          }
       	  
       	  GatewayService.getGateways().success(function (result) {
       		  vm.gateways = result;      		  
