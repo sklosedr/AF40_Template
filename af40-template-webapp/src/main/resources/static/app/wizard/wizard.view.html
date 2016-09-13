@@ -4,16 +4,18 @@
         <md-whiteframe class="md-whiteframe-5dp layout-align-left-center layout-row" layout-align="left center" style="height: 150px; padding: 10px; padding-left: 100px; background-color: #FFFFFF">
             <span><img src="assets/logo/logo.png" style="width: 75px; height: 75px; "></span>
             <span style="padding-left: 25px; font-weight:bold;font-size:1.5rem;color:#616161;">myBusiness smartEnergy: Fast Track</span>
+        	
+        	<md-input-container class="user-option">
+			  <md-select ng-model="selectedStatusType" placeholder="Max Mustermann" class="md-no-underline">
+			    <md-option ng-value="Max Mustermann">Max Mustermann</md-option>
+			    <md-option ng-value="Profil bearbeiten">Profil bearbeiten</md-option>
+			    <md-option ng-value="Passwort ändern">Passwort Ã¤ndern</md-option>
+			    <md-option ng-value="Mandant wechseln">Mandant wechseln</md-option>
+			    <md-option ng-value="Mandant wechseln">Ausloggen</md-option>
+			  </md-select>
+			</md-input-container>
+        
         </md-whiteframe>
-        <div layout="row" layout-align="space-between center">
-        <span>What is your favorite weapon?</span>
-        <md-select ng-model="weapon" placeholder="Weapon" class="md-no-underline">
-          <md-option value="axe">Axe</md-option>
-          <md-option value="sword">Sword</md-option>
-          <md-option value="wand">Wand</md-option>
-          <md-option value="pen">Pen?</md-option>
-        </md-select>
-      </div>
     </div>
 
 	<div>

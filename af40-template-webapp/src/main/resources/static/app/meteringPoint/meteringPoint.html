@@ -98,10 +98,10 @@
 							</div>
 							<div ng-repeat='gateway in vm.gateways' class="row">
 								<div flex layout='row' layout-padding layout-align="start center" >
-						          <md-radio-button flex ng-value="gateway.gatewayId" class="md-primary" >
+						          <md-radio-button flex ng-value="gateway.gatewayId" class="md-primary radio-in-list" >
 						          	{{ gateway.gatewayId }}
 						          </md-radio-button>
-						          <div flex style="max-width:350px;">
+						          <div flex style="max-width:350px;" class="gateway-list">
 									<span>2x</span>
 									<img src="assets/icons/power-active.png" class="md-avatar" alt="Elektrizität">
 									<span>1x</span>
