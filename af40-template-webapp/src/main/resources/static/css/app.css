@@ -3,8 +3,8 @@
 }
 
 .nli-header-1 {
-	font-size: 1.75rem;
-	padding: 20px;
+	font-size: 1.5rem;
+	padding: 2rem;
 	color: #0288d1;
 }
 
@@ -14,6 +14,7 @@ h3 {
 
 p.textfield {
 	width: 800px;
+	margin-top: 0;
 }
 
 md-content {
@@ -118,7 +119,7 @@ a.md-button.md-default-theme.md-primary.md-raised:not ([disabled] ):hover,
 
 .site-content {
 	flex: 1 0 auto;
-	padding: 0;
+	padding: 0 2rem;
 	width: 100%;
 }
 
@@ -184,4 +185,8 @@ md-autocomplete input:not(.md-input) {
 
 #meteringPointStepper md-autocomplete-wrap {
 	box-shadow: none;
+}
+
+.md-active .md-stepper-title span {
+    font-weight: 600;
 }
