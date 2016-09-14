@@ -37,6 +37,7 @@ md-step-body {
 label.md-no-float {
 	font-size: 0.75rem;
 	left: 2px !important;
+	color: #444;
 }
 
 hr {
@@ -174,5 +175,13 @@ a.md-button.md-default-theme.md-primary.md-raised:not ([disabled] ):hover,
 }
 
 md-autocomplete input:not(.md-input) {
-	padding: 0 15px 0 0;
+	padding: 0 2px 0 2px;
+}
+
+#meteringPointStepper md-autocomplete input:focus {
+	border-bottom: 2px solid rgb(255,152,0);
+}
+
+#meteringPointStepper md-autocomplete-wrap {
+	box-shadow: none;
 }
