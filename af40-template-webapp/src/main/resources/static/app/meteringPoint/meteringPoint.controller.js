@@ -145,11 +145,7 @@
       		  if (additionalAddressInformation.room) {
       			addressInfo.push('Raum ' + additionalAddressInformation.room);
       		  }
-      		  var text = addressInfo.join(', ');
-      		  if (text) {
-      			  text = '\\\\ ' + text;
-      		  }
-      		  return text;
+      		  return addressInfo.join(', ');
       	  }
       	  
       	  vm.hasInactiveConections = function(number) {

@@ -145,16 +145,18 @@
 						  	</div>
 						  	<h4>Einbauort:</h4>
 						  	<div layout="row" class="margin-top">
-						  		<div flex>
-						  			{{ vm.selectedItem.display1 }}
-							  		{{ vm.showAdditionalAddressInformation(vm.meteringPoint.additionalAddressInformation) }}
-						  		</div>
+						  		<div flex>{{ vm.selectedItem.street }} {{ vm.selectedItem.streetNumber }}</div>
 						  	</div>
 						  	<div layout="row" class="margin-top">
-						  		<div flex>{{ vm.selectedItem.display2 }}</div>
+						  		<div flex>{{ vm.showAdditionalAddressInformation(vm.meteringPoint.additionalAddressInformation) }}</div>
+						  	</div>
+						  	<div layout="row" class="margin-top">
+						  		<div flex>{{ vm.selectedItem.zipCode }} {{ vm.selectedItem.city }}</div>
 						  	</div>
 						  	<div layout="row" class="margin-top">
 						  		<div flex><b>Gateway-ID:</b></div>
+						  	</div>
+						  	<div layout="row" class="margin-top">
 						  		<div flex>{{ vm.meteringPoint.gatewayId }}</div>
 						  	</div>
 						  </div>
