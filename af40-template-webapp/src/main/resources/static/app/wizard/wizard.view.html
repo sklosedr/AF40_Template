@@ -9,7 +9,7 @@
 			  <md-select ng-model="selectedStatusType" placeholder="Max Mustermann" class="md-no-underline">
 			    <md-option ng-value="Max Mustermann">Max Mustermann</md-option>
 			    <md-option ng-value="Profil bearbeiten">Profil bearbeiten</md-option>
-			    <md-option ng-value="Passwort �ndern">Passwort ändern</md-option>
+			    <md-option ng-value="Passwort �ndern">Passwort ändern</md-option>
 			    <md-option ng-value="Mandant wechseln">Mandant wechseln</md-option>
 			    <md-option ng-value="Mandant wechseln">Ausloggen</md-option>
 			  </md-select>
@@ -26,6 +26,29 @@
         <div class="flex">
 
             <md-grid-list md-cols-xs="1" md-cols-sm="1" md-cols-md="2" md-cols-lg="3" md-cols="3" md-row-height="1:1" md-gutter-sm="8px" md-gutter-md="8px" md-gutter-lg="8px">
+
+                <md-grid-tile>
+                    <md-content>
+                        <md-card>
+                            <img src="assets/images/measuringPointCard.jpg">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Messstelle anlegen</span>
+                                    <span class="md-subhead">Anlage einer Messstelle und Zuordnung zu Mandant, Zählpunkt und SMGW.</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-actions layout="row" layout-align="start center">
+                                <md-button class="md-primary" ng-click="vm.showPopupForm($event, 'app/meteringPoint/meteringPoint.html')">Prozess Starten</md-button>
+                                <md-card-icon-actions>
+                                    <md-button class="md-icon-button" aria-label="icon">
+                                        <md-icon md-svg-icon="icon"></md-icon>
+                                    </md-button>
+                                </md-card-icon-actions>
+                            </md-card-actions>
+                        </md-card>
+                    </md-content>
+                </md-grid-tile>
+
                 <md-grid-tile>
                     <md-content>
                         <md-card>
@@ -33,7 +56,7 @@
                             <md-card-title>
                                 <md-card-title-text>
                                     <span class="md-headline">Geschäftspartner anlegen</span>
-                                    <span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+                                    <span class="md-subhead">Erstellung von Geschäftspartnern, notwendig für die Einrichtung von Messstellen.</span>
                                 </md-card-title-text>
                             </md-card-title>
                             <md-card-actions layout="row" layout-align="start center">
@@ -51,33 +74,11 @@
                 <md-grid-tile>
                     <md-content>
                         <md-card>
-                            <img src="assets/images/measuringPointCard.jpg">
-                            <md-card-title>
-                                <md-card-title-text>
-                                    <span class="md-headline">Messstelle anlegen</span>
-                                    <span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
-                                </md-card-title-text>
-                            </md-card-title>
-                            <md-card-actions layout="row" layout-align="start center">
-                                <md-button class="md-primary" ng-click="vm.showPopupForm($event, 'app/meteringPoint/meteringPoint.html')">Prozess Starten</md-button>
-                                <md-card-icon-actions>
-                                    <md-button class="md-icon-button" aria-label="icon">
-                                        <md-icon md-svg-icon="icon"></md-icon>
-                                    </md-button>
-                                </md-card-icon-actions>
-                            </md-card-actions>
-                        </md-card>
-                    </md-content>
-                </md-grid-tile>
-                
-                <md-grid-tile>
-                    <md-content>
-                        <md-card>
                             <img src="assets/images/marketPartnerCard.jpg">
                             <md-card-title>
                                 <md-card-title-text>
                                     <span class="md-headline">Marktpartner anlegen</span>
-                                    <span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+                                    <span class="md-subhead">Anlage von Marktpartnern der Rolle Messstellenbetreiber oder Lieferant.</span>
                                 </md-card-title-text>
                             </md-card-title>
                             <md-card-actions layout="row" layout-align="start center">
@@ -99,7 +100,7 @@
                             <md-card-title>
                                 <md-card-title-text>
                                     <span class="md-headline">Anschlussobjekt pflegen</span>
-                                    <span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+                                    <span class="md-subhead">Notwendige und optionale Angaben für ein Anschlussobjekt.</span>
                                 </md-card-title-text>
                             </md-card-title>
                             <md-card-actions layout="row" layout-align="start center">
@@ -121,7 +122,7 @@
                             <md-card-title>
                                 <md-card-title-text>
                                     <span class="md-headline">Zähler anlegen</span>
-                                    <span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+                                    <span class="md-subhead">Erfassung der Stammdaten sowie Kommunikationseinstellungen des Zählers.</span>
                                 </md-card-title-text>
                             </md-card-title>
                             <md-card-actions layout="row" layout-align="start center">
@@ -144,7 +145,7 @@
                             <md-card-title>
                                 <md-card-title-text>
                                     <span class="md-headline">Tarif anlegen</span>
-                                    <span class="md-subhead">Beschreibung Beschreibung Beschreibung</span>
+                                    <span class="md-subhead">Auswahl der Tarifart und spezifischer Einstellungen zur Erstellung eines Tarifs.</span>
                                 </md-card-title-text>
                             </md-card-title>
                             <md-card-actions layout="row" layout-align="start center">
