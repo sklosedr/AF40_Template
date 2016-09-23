@@ -7,51 +7,25 @@
         .controller('LoginController', LoginController);
 
     /** @ngInject */
-    function LoginController($rootScope, $http, $location)
+    function LoginController($rootScope, Auth)
     {
-    	  var self = this
+    	var vm = this;
+    	vm.authenticationError = false;
+    	vm.credentials = {};
+    	vm.login = login;
+    	vm.credentials.username = null;
 
-    	  var authenticate = function(credentials, callback) {
-
-    	    var headers = credentials ? {authorization : "Basic "
-    	        + btoa(credentials.username + ":" + credentials.password)
-    	    } : {};
-
-    	    $http.get('user', {headers : headers}).then(function(response) {
-    	      if (response.data.name) {
-    	        $rootScope.authenticated = true;
-    	      } else {
-    	        $rootScope.authenticated = false;
-    	      }
-    	      callback && callback();
-    	    }, function() {
-    	      $rootScope.authenticated = false;
-    	      callback && callback();
-    	    });
-
-    	  }
-
-    	  authenticate();
-    	  self.credentials = {};
-    	  self.login = function() {
-    	      authenticate(self.credentials, function() {
-    	        if ($rootScope.authenticated) {
-    	          $location.path("/");
-    	          self.error = false;
-    	        } else {
-    	          $location.path("/login");
-    	          self.error = true;
-    	        }
-    	      });
-    	  };
-    	  
-    	  self.logout = function() {
-    		  $http.post('logout', {}).finally(function() {
-    		    $rootScope.authenticated = false;
-    		    $location.path("/");
-    		  });
-    	  }
-    	  
+    	function login($event) {
+    		Auth.login({
+                username: vm.credentials.username,
+                password: vm.credentials.password
+            }).then(function () {
+            	vm.authenticationError = false;
+            }).catch(function () {
+            	vm.authenticationError = true;
+            });
+    	}
+    	
     }
     
-})(angular);
+})();

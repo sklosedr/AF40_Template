@@ -3,7 +3,7 @@
     'use strict';
     
           angular.module('fastTrackApp').constant("baseUrl", "http://app3.level365.de/");
-    //		angular.module('fastTrackApp').constant("baseUrl", "http://localhost:8080");
+//		angular.module('fastTrackApp').constant("baseUrl", "http://localhost:8080");
     
     angular.module('fastTrackApp').config(function($httpProvider, $mdThemingProvider) {
     	$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
@@ -13,6 +13,13 @@
 	        .warnPalette('deep-orange')
 	        .backgroundPalette('grey'); 
     });
+    
+    angular.run( function run($http, $cookies ){
+
+        // For CSRF token compatibility with Django
+//        $http.defaults.headers.post['X-CSRFToken'] = $cookies['csrftoken'];
+    })
+
 
     
     angular.module('fastTrackApp').

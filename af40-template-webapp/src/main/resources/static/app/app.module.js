@@ -2,6 +2,18 @@
 {
     'use strict';
     
-    angular.module('fastTrackApp', ['ngMaterial', 'ngRoute', 'base64', 'uiGmapgoogle-maps', 'fastTrackApp.businessPartner', 'fastTrackApp.meteringPoint', 'fastTrackApp.connectionObject', 'fastTrackApp.gateway']);
+    angular
+    	.module('fastTrackApp', [
+    	  'ngStorage',
+    	  'ngCookies',
+    	  'ngMaterial',
+    	  'ngResource',
+    	  'ngRoute',
+    	  'base64',
+    	  'uiGmapgoogle-maps',
+    	  'fastTrackApp.businessPartner',
+    	  'fastTrackApp.meteringPoint',
+    	  'fastTrackApp.connectionObject',
+    	  'fastTrackApp.gateway']);
 
 })();
