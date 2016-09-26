@@ -7,11 +7,11 @@
         .factory('ConnectionObjectService', ConnectionObjectService);
     
     /** @ngInject */
-    function ConnectionObjectService($http, baseUrl)
+    function ConnectionObjectService($http)
     {
     	return {
     		getConnectionObjects : function() {
-    			return $http.get(baseUrl + "/connectionObject");
+    			return $http.get("connectionObject");
     		}
     	}
     }

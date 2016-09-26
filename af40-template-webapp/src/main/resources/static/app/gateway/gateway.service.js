@@ -7,14 +7,14 @@
         .factory('GatewayService', GatewayService);
     
     /** @ngInject */
-    function GatewayService($http, baseUrl)
+    function GatewayService($http)
     {
     	return {
     		getGateways : function() {
-    			return $http.get(baseUrl + "/gateway");
+    			return $http.get("gateway");
     		},
     		getGatewaysForAddress : function(addressId) {
-    			return $http.get(baseUrl + "/gateway/address/" + addressId);
+    			return $http.get("gateway/address/" + addressId);
     		}
     	}
     }

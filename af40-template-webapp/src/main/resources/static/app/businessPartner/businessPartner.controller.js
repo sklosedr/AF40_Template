@@ -7,7 +7,7 @@
         .controller('BusinessPartnerController', BusinessPartnerController);
     
     /** @ngInject */
-    function BusinessPartnerController($mdStepper, $http, $mdDialog, baseUrl)
+    function BusinessPartnerController($mdStepper, $http, $mdDialog, $mdToast, BusinessPartnerService)
     {
     	var vm = this;
     	
@@ -36,14 +36,23 @@
     	}
     	
     	vm.createBusinessPartner = function() {
-    		$http.post(baseUrl + "/businessPartner", vm.businessPartner, {})
+    		BusinessPartnerService.createBusinessPartner(vm.businessPartner)
     			.then(function (result) {
-    				alert('Der Geschäftspartner wurde erfolgreich angelegt.');
+    				doToast('Der Geschäftspartner wurde erfolgreich angelegt.');
     				$mdDialog.hide();
     			}).catch(function (result) {
-    				alert('Fehler ' +  result.status + ' ' + result.statusText);
+    				doToast('Fehler ' +  result.status + ' ' + result.statusText);
     				$mdDialog.hide();
     			} );
+    	}
+    	
+    	function doToast(message) {
+    	    $mdToast.show(
+  	    	      $mdToast.simple()
+  	    	        .textContent(message)
+  	    	        .position('bottom left')
+  	    	        .hideDelay(10000)
+  	    	    );
     	}
 
     }

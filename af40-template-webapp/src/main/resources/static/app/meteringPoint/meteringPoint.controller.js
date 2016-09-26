@@ -7,7 +7,7 @@
         .controller('MeteringPointController', MeteringPointController);
     
     /** @ngInject */
-    function MeteringPointController($mdStepper, $http, $mdDialog, $log, $mdToast, ConnectionObjectService, GatewayService, MeteringPointService, baseUrl)
+    function MeteringPointController($mdStepper, $http, $mdDialog, $log, $mdToast, ConnectionObjectService, GatewayService, MeteringPointService)
     {
     	var vm = this;
     	

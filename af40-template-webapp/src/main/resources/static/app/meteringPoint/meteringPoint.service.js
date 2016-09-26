@@ -7,10 +7,10 @@
         .factory('MeteringPointService', MeteringPointService);
     
     /** @ngInject */
-    function MeteringPointService($http, baseUrl) {
+    function MeteringPointService($http) {
     	return {
     		createMeteringPoint : function(meteringPoint) {
-    			return $http.post(baseUrl + "/meteringPoint", meteringPoint, {});
+    			return $http.post("meteringPoint", meteringPoint, {});
     		}
     	}
     }
