@@ -3,12 +3,6 @@
     'use strict';
 
     angular
-        .module('fastTrackApp.connectionObject', [])
-        .config(config);
+        .module('fastTrackApp.connectionObject', []);
 
-    /** @ngInject */
-    function config()
-    {
-    	
-    }
 })();

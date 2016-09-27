@@ -5,6 +5,8 @@
         .module('fastTrackApp')
         .factory('Principal', Principal);
     
+    Principal.$inject = ['$q', 'Account'];
+    
     function Principal ($q, Account) {
         var _identity,
         _authenticated = false;

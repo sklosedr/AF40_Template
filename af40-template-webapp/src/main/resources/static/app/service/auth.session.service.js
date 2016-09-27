@@ -4,6 +4,8 @@
     angular
     	.module('fastTrackApp')
         .factory('AuthServerProvider', AuthServerProvider);
+    
+    AuthServerProvider.$inject = ['$http', '$localStorage'];
 
     function AuthServerProvider ($http, $localStorage) {
         var service = {

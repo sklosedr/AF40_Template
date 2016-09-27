@@ -3,12 +3,6 @@
     'use strict';
 
     angular
-        .module('fastTrackApp.gateway', [])
-        .config(config);
+        .module('fastTrackApp.gateway', []);
 
-    /** @ngInject */
-    function config()
-    {
-    	
-    }
 })();

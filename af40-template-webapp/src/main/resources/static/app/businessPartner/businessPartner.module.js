@@ -3,12 +3,6 @@
     'use strict';
 
     angular
-        .module('fastTrackApp.businessPartner', ['ngMaterial', 'mdSteppers'])
-        .config(config);
+        .module('fastTrackApp.businessPartner', ['ngMaterial', 'mdSteppers']);
 
-    /** @ngInject */
-    function config()
-    {
-    	
-    }
 })();

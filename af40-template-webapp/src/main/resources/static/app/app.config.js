@@ -1,17 +1,18 @@
 (function ()
 {
     'use strict';
+
+    angular.module('fastTrackApp').config(globalConfig);
     
-//          angular.module('fastTrackApp').constant("baseUrl", "http://app3.level365.de/");
-//		angular.module('fastTrackApp').constant("baseUrl", "http://localhost:8080");
+    globalConfig.$inject = ['$httpProvider', '$mdThemingProvider'];
     
-    angular.module('fastTrackApp').config(function($httpProvider, $mdThemingProvider) {
+    function globalConfig($httpProvider, $mdThemingProvider) {
     	$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
     	$mdThemingProvider.theme('default')
 	    	.primaryPalette('orange')
 	        .accentPalette('blue')
 	        .warnPalette('deep-orange')
 	        .backgroundPalette('grey'); 
-    });
+    };
 
 })();

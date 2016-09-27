@@ -27,7 +27,6 @@
 	<script src="bower_components/angular-aria/angular-aria.js"></script>
 	<script src="bower_components/angular-messages/angular-messages.js"></script>
 	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
-	<script src="bower_components/ng-cookies/dist/ng-cookies.min.js"></script>
 	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 	<script src="bower_components/angular-resource/angular-resource.js"></script>
 	<script src="bower_components/angular-translate/angular-translate.js"></script>
@@ -56,31 +55,22 @@
 <!-- 	<script src="//maps.googleapis.com/maps/api/js?sensor=false"></script> -->
 	 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt3-wZwtcGPb6WYadkN47VYwbN_BXYbu0&sensor=false" type="text/javascript"></script>
 	
-	<script src="app/app.module.js"></script>
-	<script src="app/app.config.js"></script>
-	<script src="app/app.state.js"></script>
-	
-	<script src="app/service/account.service.js"></script>
-	<script src="app/service/auth.service.js"></script>
-	<script src="app/service/auth.session.service.js"></script>
-	<script src="app/service/principal.service.js"></script>
-	
-	<script src="app/login/login.controller.js"></script>
-	<script src="app/wizard/wizard.controller.js"></script>
-	
-	<script src="app/businessPartner/businessPartner.module.js"></script>
-	<script src="app/businessPartner/businessPartner.controller.js"></script>
-	<script src="app/businessPartner/businessPartner.service.js"></script>
-	
-	<script src="app/connectionObject/connectionObject.module.js"></script>
-	<script src="app/connectionObject/connectionObject.service.js"></script>
+	<!-- build:js app/app.js  -->
+    <!-- inject:js -->
+    <script src="app/app.module.js"></script>
+    <script src="app/wizard/wizard.controller.js"></script>
+    <script src="app/meteringPoint/meteringPoint.module.js"></script>
+    <script src="app/meteringPoint/meteringPoint.controller.js"></script>
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/gateway/gateway.module.js"></script>
+    <script src="app/connectionObject/connectionObject.module.js"></script>
+    <script src="app/businessPartner/businessPartner.module.js"></script>
+    <script src="app/app.state.js"></script>
+    <script src="app.min.js"></script>
+    <script src="app/app.config.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
 
-	<script src="app/gateway/gateway.module.js"></script>
-	<script src="app/gateway/gateway.service.js"></script>
 
-	<script src="app/meteringPoint/meteringPoint.module.js"></script>
-	<script src="app/meteringPoint/meteringPoint.controller.js"></script>
-	<script src="app/meteringPoint/meteringPoint.service.js"></script>
-	
 </body>
 </html>

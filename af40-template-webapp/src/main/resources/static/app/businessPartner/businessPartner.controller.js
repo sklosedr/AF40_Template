@@ -6,7 +6,8 @@
         .module('fastTrackApp.businessPartner')
         .controller('BusinessPartnerController', BusinessPartnerController);
     
-    /** @ngInject */
+    BusinessPartnerController.$inject = ['$mdStepper', '$http', '$mdDialog', '$mdToast', 'BusinessPartnerService'];
+    
     function BusinessPartnerController($mdStepper, $http, $mdDialog, $mdToast, BusinessPartnerService)
     {
     	var vm = this;

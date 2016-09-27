@@ -6,9 +6,9 @@
         .module('fastTrackApp')
         .controller('WizardController', WizardController);
 
-    /** @ngInject */
-    function WizardController($mdDialog, $location, Principal)
-    {
+    WizardController.$inject = ['$mdDialog', '$location', 'Principal'];
+    
+    function WizardController($mdDialog, $location, Principal) {
     	var vm = this;
     	
     	var auth = Principal.isAuthenticated ();

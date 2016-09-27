@@ -6,7 +6,8 @@
         .module('fastTrackApp.connectionObject')
         .factory('ConnectionObjectService', ConnectionObjectService);
     
-    /** @ngInject */
+    ConnectionObjectService.$inject = ['$http'];
+    
     function ConnectionObjectService($http)
     {
     	return {

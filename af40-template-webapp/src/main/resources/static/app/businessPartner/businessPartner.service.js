@@ -6,7 +6,8 @@
         .module('fastTrackApp.businessPartner')
         .factory('BusinessPartnerService', BusinessPartnerService);
     
-    /** @ngInject */
+    BusinessPartnerService.$inject = ['$http'];
+    
     function BusinessPartnerService($http)
     {
     	return {

@@ -6,7 +6,8 @@
         .module('fastTrackApp.meteringPoint')
         .controller('MeteringPointController', MeteringPointController);
     
-    /** @ngInject */
+    MeteringPointController.$inject = ['$mdStepper', '$http', '$mdDialog', '$log', '$mdToast', 'ConnectionObjectService', 'GatewayService', 'MeteringPointService'];
+    
     function MeteringPointController($mdStepper, $http, $mdDialog, $log, $mdToast, ConnectionObjectService, GatewayService, MeteringPointService)
     {
     	var vm = this;

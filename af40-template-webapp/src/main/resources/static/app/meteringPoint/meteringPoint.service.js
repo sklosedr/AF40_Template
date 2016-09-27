@@ -6,7 +6,8 @@
         .module('fastTrackApp.meteringPoint')
         .factory('MeteringPointService', MeteringPointService);
     
-    /** @ngInject */
+    MeteringPointService.$inject = ['$http'];
+    
     function MeteringPointService($http) {
     	return {
     		createMeteringPoint : function(meteringPoint) {

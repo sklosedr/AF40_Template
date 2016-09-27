@@ -6,9 +6,9 @@
         .module('fastTrackApp.gateway')
         .factory('GatewayService', GatewayService);
     
-    /** @ngInject */
-    function GatewayService($http)
-    {
+    GatewayService.$inject = ['$http'];
+    
+    function GatewayService($http) {
     	return {
     		getGateways : function() {
     			return $http.get("gateway");

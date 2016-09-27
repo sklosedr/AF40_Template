@@ -5,8 +5,9 @@
     angular
         .module('fastTrackApp')
         .controller('LoginController', LoginController);
+    
+    LoginController.$inject = ['$rootScope', 'Auth'];
 
-    /** @ngInject */
     function LoginController($rootScope, Auth)
     {
     	var vm = this;

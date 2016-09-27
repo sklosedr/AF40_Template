@@ -5,6 +5,8 @@
         .module('fastTrackApp')
         .factory('Auth', Auth);
     
+    Auth.$inject = ['$q', '$location', 'Principal', 'AuthServerProvider'];
+    
     function Auth ($q, $location, Principal, AuthServerProvider) {
     	var service = {
     			login: login,

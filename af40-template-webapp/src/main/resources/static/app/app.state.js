@@ -2,8 +2,11 @@
 {
     'use strict';
     
-    /** @ngInject */
-    angular.module('fastTrackApp').config(function($routeProvider) {
+    angular.module('fastTrackApp').config(stateConfig);
+    
+    stateConfig.$inject = ['$routeProvider'];
+    
+    function stateConfig($routeProvider) {
     	$routeProvider
     		.when('/', {
     			templateUrl: 'app/wizard/wizard.view.html',
@@ -16,7 +19,7 @@
     			controllerAs: 'vm'
     		})
     		.otherwise('/');
-    });
+    }
     
     
 })();
