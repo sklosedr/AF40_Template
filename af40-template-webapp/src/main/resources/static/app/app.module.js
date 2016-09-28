@@ -6,14 +6,12 @@
     	.module('fastTrackApp', [
     	  'ngStorage',
     	  'ngCookies',
+    	  'mdSteppers',
     	  'ngMaterial',
     	  'ngResource',
     	  'ngRoute',
     	  'base64',
-    	  'uiGmapgoogle-maps',
-    	  'fastTrackApp.businessPartner',
-    	  'fastTrackApp.meteringPoint',
-    	  'fastTrackApp.connectionObject',
-    	  'fastTrackApp.gateway']);
+    	  'uiGmapgoogle-maps'
+    	  ]);
 
 })();

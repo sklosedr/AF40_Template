@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('fastTrackApp.meteringPoint')
+        .module('fastTrackApp')
         .controller('MeteringPointController', MeteringPointController);
     
     MeteringPointController.$inject = ['$mdStepper', '$http', '$mdDialog', '$log', '$mdToast', 'ConnectionObjectService', 'GatewayService', 'MeteringPointService'];

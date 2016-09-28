@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('fastTrackApp.meteringPoint')
+        .module('fastTrackApp')
         .factory('MeteringPointService', MeteringPointService);
     
     MeteringPointService.$inject = ['$http'];

@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('fastTrackApp.businessPartner')
+        .module('fastTrackApp')
         .controller('BusinessPartnerController', BusinessPartnerController);
     
     BusinessPartnerController.$inject = ['$mdStepper', '$http', '$mdDialog', '$mdToast', 'BusinessPartnerService'];

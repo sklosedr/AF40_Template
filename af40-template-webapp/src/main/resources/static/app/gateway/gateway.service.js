@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('fastTrackApp.gateway')
+        .module('fastTrackApp')
         .factory('GatewayService', GatewayService);
     
     GatewayService.$inject = ['$http'];

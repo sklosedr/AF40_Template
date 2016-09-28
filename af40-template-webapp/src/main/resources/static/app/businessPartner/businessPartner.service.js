@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('fastTrackApp.businessPartner')
+        .module('fastTrackApp')
         .factory('BusinessPartnerService', BusinessPartnerService);
     
     BusinessPartnerService.$inject = ['$http'];

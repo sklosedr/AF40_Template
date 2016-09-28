@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('fastTrackApp.connectionObject')
+        .module('fastTrackApp')
         .factory('ConnectionObjectService', ConnectionObjectService);
     
     ConnectionObjectService.$inject = ['$http'];
