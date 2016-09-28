@@ -5,7 +5,6 @@ var runSequence = require('run-sequence');
 var uglify = require('gulp-uglify');
 var bowerFiles = require('main-bower-files');
 var angularFilesort = require('gulp-angular-filesort');
-var sourcemaps = require('gulp-sourcemaps');
 
 var config = require('./gulp/config');
 
@@ -43,19 +42,15 @@ gulp.task('scripts', function() {
 
 gulp.task('scripts:app', function() {
 	  return gulp.src(config.minifyApp)
-	    .pipe(sourcemaps.init())
 	     .pipe(uglify())
 	     .pipe(concat('app.min.js'))
-	    .pipe(sourcemaps.write())
 	    .pipe(gulp.dest('./src/main/resources/static'));
 });
 
 gulp.task('scripts:vendor', function() {
 	  return gulp.src(config.injectVendor)
-	    .pipe(sourcemaps.init())
 	     .pipe(uglify())
 	     .pipe(concat('vendor.min.js'))
-	    .pipe(sourcemaps.write())
 	    .pipe(gulp.dest('./src/main/resources/static'));
 });
 
