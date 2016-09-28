@@ -14,6 +14,7 @@ module.exports = {
 	          '!' + appConfig + '**/login.controller.js'    
                 ],
     injectAppProd: [
+              rootPathConfig + 'vendor.min.js',
               appConfig + 'app.module.js',
               appConfig + 'app.config.js',
               appConfig + 'app.state.js',
@@ -27,7 +28,9 @@ module.exports = {
               rootPathConfig + 'app.min.js'
                 ],
     injectAppDev: [
+              rootPathConfig + 'vendor.min.js',
               appConfig + 'app.module.js',
+                   
               appConfig + 'app.config.js',
               appConfig + 'app.state.js',
               

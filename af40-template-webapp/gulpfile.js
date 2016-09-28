@@ -1,4 +1,4 @@
-var gulp = require('gulp')
+var gulp = require('gulp');
 var inject = require('gulp-inject');
 var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
@@ -23,15 +23,13 @@ gulp.task('inject:vendor', function () {
 
 gulp.task('inject:app:dev', function () {
 	var stream = gulp.src(config.rootPath + 'index.html')
-	.pipe(inject(gulp.src(config.injectAppDev)
-            .pipe(angularFilesort()), {relative: true}))
+	.pipe(inject(gulp.src(config.injectAppDev), {relative: true}))
 	.pipe(gulp.dest(config.rootPath));
 });
 
 gulp.task('inject:app:prod', function () {
 	var stream = gulp.src(config.rootPath + 'index.html')
-	.pipe(inject(gulp.src(config.injectAppProd)
-            .pipe(angularFilesort()), {relative: true}))
+	.pipe(inject(gulp.src(config.injectAppProd), {relative: true}))
 	.pipe(gulp.dest(config.rootPath));
 });
 
