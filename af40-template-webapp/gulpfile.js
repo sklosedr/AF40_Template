@@ -2,7 +2,6 @@ var gulp = require('gulp')
 var inject = require('gulp-inject');
 var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
-var naturalSort = require('gulp-natural-sort');
 var uglify = require('gulp-uglify');
 var bowerFiles = require('main-bower-files');
 var angularFilesort = require('gulp-angular-filesort');
@@ -25,7 +24,6 @@ gulp.task('inject:vendor', function () {
 gulp.task('inject:app:dev', function () {
 	var stream = gulp.src(config.rootPath + 'index.html')
 	.pipe(inject(gulp.src(config.injectAppDev)
-			.pipe(naturalSort())
             .pipe(angularFilesort()), {relative: true}))
 	.pipe(gulp.dest(config.rootPath));
 });
@@ -33,16 +31,19 @@ gulp.task('inject:app:dev', function () {
 gulp.task('inject:app:prod', function () {
 	var stream = gulp.src(config.rootPath + 'index.html')
 	.pipe(inject(gulp.src(config.injectAppProd)
-			.pipe(naturalSort())
             .pipe(angularFilesort()), {relative: true}))
 	.pipe(gulp.dest(config.rootPath));
 });
 
 gulp.task('inject', function () {
-    runSequence('inject:vendor');
+//    runSequence('inject:vendor');
 });
 
-gulp.task('app-scripts', function() {
+gulp.task('scripts', function() {
+	runSequence('scripts:app', 'scripts:vendor');
+});
+
+gulp.task('scripts:app', function() {
 	  return gulp.src(config.minifyApp)
 	    .pipe(sourcemaps.init())
 	     .pipe(uglify())
@@ -51,10 +52,19 @@ gulp.task('app-scripts', function() {
 	    .pipe(gulp.dest('./src/main/resources/static'));
 });
 
+gulp.task('scripts:vendor', function() {
+	  return gulp.src(config.injectVendor)
+	    .pipe(sourcemaps.init())
+	     .pipe(uglify())
+	     .pipe(concat('vendor.min.js'))
+	    .pipe(sourcemaps.write())
+	    .pipe(gulp.dest('./src/main/resources/static'));
+});
+
 gulp.task('build', function () {
-    runSequence('inject', 'app-scripts', 'inject:app:prod');
+    runSequence('inject', 'scripts', 'inject:app:prod');
 });
 
 gulp.task('build:dev', function () {
-    runSequence('inject', 'app-scripts', 'inject:app:dev');
+    runSequence('inject', 'scripts', 'inject:app:dev');
 });

@@ -1,5 +1,6 @@
 var rootPathConfig= 'src/main/resources/static/';
-var appConfig = 'src/main/resources/static/app/';
+var appConfig = rootPathConfig + 'app/';
+var bowerConfig = rootPathConfig + 'bower_components/';
 
 module.exports = {
     rootPath: rootPathConfig,
@@ -50,7 +51,34 @@ module.exports = {
               
               appConfig + 'meteringPoint/meteringPoint.module.js',
               appConfig + 'meteringPoint/meteringPoint.controller.js',
-              appConfig + 'meteringPoint/meteringPoint.service.js',
+              appConfig + 'meteringPoint/meteringPoint.service.js'
+                ],
+    injectVendor: [
+              bowerConfig + 'angular/angular.js',
+              bowerConfig + 'angular-aria/angular-aria.js',
+              bowerConfig + 'angular-messages/angular-messages.js',
+              bowerConfig + 'angular-cookies/angular-cookies.js',
+              bowerConfig + 'angular-sanitize/angular-sanitize.js',
+              bowerConfig + 'angular-resource/angular-resource.js',
+              bowerConfig + 'angular-translate/angular-translate.js',
+              bowerConfig + 'angular-translate-loader-partial/angular-translate-loader-partial.js',
+              bowerConfig + 'angular-mocks/angular-mocks.js',
+              bowerConfig + 'jquery/dist/jquery.js',
+              bowerConfig + 'mobile-detect/mobile-detect.js',
+              bowerConfig + 'angular-ui-router/release/angular-ui-router.js',
+              bowerConfig + 'perfect-scrollbar/js/perfect-scrollbar.jquery.js',
+              bowerConfig + 'perfect-scrollbar/js/perfect-scrollbar.js',
+              bowerConfig + 'moment/moment.js',
+              bowerConfig + 'angular-animate/angular-animate.js',
+              bowerConfig + 'angular-material/angular-material.js',
+              bowerConfig + 'ngstorage/ngStorage.js',
+              bowerConfig + 'angular-resource/angular-resource.js',
+              bowerConfig + 'angular-route/angular-route.min.js',
+              bowerConfig + 'angular-base64/angular-base64.js',
+              bowerConfig + 'material-steppers/dist/material-steppers.js',
+              bowerConfig + 'lodash/dist/lodash.min.js',
+              bowerConfig + 'angular-simple-logger/dist/angular-simple-logger.js',
+              bowerConfig + 'angular-google-maps/dist/angular-google-maps.js',
                 ]
 
                 

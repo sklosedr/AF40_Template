@@ -21,52 +21,22 @@
 		<div ng-view class="container"></div>
 	</body>
 
-
-	<!-- bower:js -->
-	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/angular-aria/angular-aria.js"></script>
-	<script src="bower_components/angular-messages/angular-messages.js"></script>
-	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
-	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-	<script src="bower_components/angular-resource/angular-resource.js"></script>
-	<script src="bower_components/angular-translate/angular-translate.js"></script>
-	<script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
-	<script src="bower_components/angular-mocks/angular-mocks.js"></script>
-	<script src="bower_components/jquery/dist/jquery.js"></script>
-	<script src="bower_components/mobile-detect/mobile-detect.js"></script>
-	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-	<script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
-	<script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.js"></script>
-	<script src="bower_components/moment/moment.js"></script>
-	<script src="bower_components/angular-animate/angular-animate.js"></script>
-	<script src="bower_components/angular-material/angular-material.js"></script>
-	<!-- endinject -->
-	
-	<script src="bower_components/ngstorage/ngStorage.js"></script>
-	<script src="bower_components/angular-resource/angular-resource.js"></script>
-	<script src="bower_components/angular-route/angular-route.min.js"></script>
-	<script src="bower_components/angular-base64/angular-base64.js"></script>
-<!-- 	<script src="bower_components/md-steppers/dist/md-steppers.min.js"></script> -->
-	<script src="bower_components/material-steppers/dist/material-steppers.min.js"></script>
-	<script src="bower_components/lodash/dist/lodash.min.js"></script>
-	<script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
-	<script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
-	
-<!-- 	<script src="//maps.googleapis.com/maps/api/js?sensor=false"></script> -->
 	 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt3-wZwtcGPb6WYadkN47VYwbN_BXYbu0&sensor=false" type="text/javascript"></script>
+	
+	<script src="vendor.min.js"></script>
 	
 	<!-- build:js app/app.js  -->
     <!-- inject:js -->
     <script src="app/app.module.js"></script>
-    <script src="app/wizard/wizard.controller.js"></script>
     <script src="app/meteringPoint/meteringPoint.module.js"></script>
-    <script src="app/meteringPoint/meteringPoint.controller.js"></script>
-    <script src="app/login/login.controller.js"></script>
     <script src="app/gateway/gateway.module.js"></script>
     <script src="app/connectionObject/connectionObject.module.js"></script>
     <script src="app/businessPartner/businessPartner.module.js"></script>
-    <script src="app/app.state.js"></script>
     <script src="app.min.js"></script>
+    <script src="app/meteringPoint/meteringPoint.controller.js"></script>
+    <script src="app/wizard/wizard.controller.js"></script>
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/app.state.js"></script>
     <script src="app/app.config.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
