@@ -1,16 +1,13 @@
-<md-dialog aria-label="List dialog"
-	ng-controller="MeteringPointController as vm">
-	<md-dialog-content>
+<md-dialog aria-label="List dialog"	ng-controller="MeteringPointController as vm" style="height:700px; width:850px;">
+	<md-dialog-content style="overflow:hidden;">
 
 		<form name="meteringPointForm">
-			<md-stepper id="meteringPointStepper">
-<!--  			
-				md-mobile-step-text="$ctrl.isMobileStepText"
-				md-vertical="$ctrl.isVertical" 
-				md-linear="$ctrl.isLinear"
-				md-alternative="$ctrl.isAlternative"
- 				class="md-steppers-alternative"
--->
+			<md-stepper id="meteringPointStepper" class="ng-cloak"
+				md-mobile-step-text="true"
+				md-vertical="false" 
+				md-linear="false"
+ 				class="md-steppers-alternative">
+<!-- 				md-alternative="$ctrl.isAlternative" -->
 				
 				<md-step md-label="Messstelle beschreiben">
 					<md-step-body>
