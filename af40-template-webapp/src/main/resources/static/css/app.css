@@ -35,6 +35,12 @@ md-step-body {
 	padding: 1rem;
 }
 
+@media screen and (max-device-width: 770px) and (-webkit-min-device-pixel-ratio:0) {
+	md-steppers-header button {
+		width:200px;
+	}
+}
+
 label.md-no-float {
 	font-size: 0.75rem;
 	left: 2px !important;
@@ -73,6 +79,24 @@ a.md-button.md-default-theme.md-primary.md-raised:not ([disabled] ):hover,
 
 #meteringPointStepper md-step-body {
 	min-height: 470px;
+}
+
+#gatewayRadioGroup {
+	max-height: 300px;
+}
+
+@media screen and (max-device-height: 770px) and (-webkit-min-device-pixel-ratio:0) {
+	md-steppers-header button {
+		width:200px;
+	}
+	
+	#meteringPointStepper md-step-body {
+		min-height: 442px;
+	}
+	
+	#gatewayRadioGroup {
+		max-height: 279px;
+	}
 }
 
 #businessPartnerStepper md-step-actions, #meteringPointStepper md-step-actions
