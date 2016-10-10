@@ -39,6 +39,7 @@
     	}
     	
     	vm.selectedItem = '';
+    	vm.searchText = '';
     	vm.simulateQuery = true;
     	vm.isDisabled = false;
     	vm.isNewGateway = true;
@@ -65,16 +66,24 @@
     	vm.querySearch   = querySearch;
     	vm.selectedItemChange = selectedItemChange;
     	vm.searchTextChange   = searchTextChange;
+    	vm.isSearchAddressInvalid = isSearchAddressInvalid;
 
-    	vm.newState = newState;
-
-        function newState(state) {
-            alert("Sorry! You'll need to create a Constitution for " + state + " first!");
-          }
 
           // ******************************
           // Internal methods
           // ******************************
+    	
+    	function isSearchAddressInvalid() {
+    		var searchTextIsEmpty = true;
+    		var selectedItemIsEmpty = true;
+    		if (vm.searchText && vm.searchText.length > 1) {
+    			searchTextIsEmpty = false;
+    		}
+    		if (vm.selectedItem) {
+    			selectedItemIsEmpty = false;
+    		}
+    		return !searchTextIsEmpty && selectedItemIsEmpty;
+    	}
 
           /**
            * Search for states... use $timeout to simulate

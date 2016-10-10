@@ -37,6 +37,12 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- end::tests[] -->
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 
 	<properties>
@@ -45,10 +51,6 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
 			<plugin>
 				<artifactId>maven-failsafe-plugin</artifactId>
 				<executions>
@@ -74,6 +76,17 @@
 			</dependencies>
 			<build>
 				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+					    <dependencies>
+							<dependency>
+							    <groupId>org.springframework</groupId>
+							    <artifactId>springloaded</artifactId>
+							    <version>1.2.6.RELEASE</version>
+							</dependency>
+					    </dependencies>
+					</plugin>
 					<plugin>
 						<groupId>com.github.eirslett</groupId>
 						<artifactId>frontend-maven-plugin</artifactId>
@@ -161,6 +174,10 @@
 			</dependencies>
 			<build>
 				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+					</plugin>
 					<plugin>
 						<groupId>com.github.eirslett</groupId>
 						<artifactId>frontend-maven-plugin</artifactId>
