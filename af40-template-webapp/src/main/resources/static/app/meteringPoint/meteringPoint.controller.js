@@ -140,9 +140,12 @@
         	  vm.isNewGateway = false;
           }
       	  
-      	  GatewayService.getGateways().success(function (result) {
-      		  vm.gateways = result;      		  
-      	  });
+          vm.existsGatewaysForAddress = function() {
+        	  if (vm.gateways && vm.gateways.length > 0) {
+        		  return true;
+        	  }
+        	  return false;
+          }
       	  
       	  vm.showAdditionalAddressInformation = function(additionalAddressInformation) {
       		  var addressInfo = [];
