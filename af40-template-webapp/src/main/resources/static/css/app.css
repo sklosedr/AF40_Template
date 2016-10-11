@@ -135,7 +135,7 @@ md-steppers-header button {
 	outline: none;
 }
 
-@media screen and (max-device-width: 770px) and (-webkit-min-device-pixel-ratio:0) {
+@media screen and (max-device-width: 1300px) and (-webkit-min-device-pixel-ratio:0) {
 	md-steppers-header button {
 		width:200px;
 	}
@@ -200,7 +200,7 @@ md-steppers-header button {
 }
 
 
-@media screen and (max-device-height: 770px) and (-webkit-min-device-pixel-ratio:0) {
+@media screen and (max-device-height: 1300px) and (-webkit-min-device-pixel-ratio:0) {
 	md-steppers-header button {
 		width:200px;
 	}
