@@ -35,12 +35,12 @@ node('build-slave') {
     sh("kubectl apply -f k8s/deployments/app-deployment.yaml")
     sh("kubectl apply -f k8s/services/app-service.yaml")
 
-    stage 'Extract service IP address'
-    // Execute and wait for external service to become available
-    sh("echo 'kubectl get services'")
+//    stage 'Extract service IP address'
+    // Execute and wait for external service to become availabl
+//    sh("echo 'kubectl get services'")
     // Read output from script above
 //    def FRONTEND_ADDRESS=readFile('frontend_service_address').trim()
 
-    stage 'Output service external address'
-    sh("echo 'kubectl get services'")
+//    stage 'Output service external address'
+//    sh("echo 'kubectl get services'")
 }
