@@ -3,14 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>app2</artifactId>
+	<artifactId>af40-nli-backend</artifactId>
 
-	<name>app1</name>
-	<description>Seed starter spring boot application</description>
+	<name>af40-nli-backend</name>
 
 	<parent>
 		<groupId>com.next-level-integration</groupId>
-		<artifactId>app3-parent</artifactId>
+		<artifactId>af40-customer-backend</artifactId>
 		<version>1.0.0</version>
 	</parent>
 
@@ -18,7 +17,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.next-level-integration</groupId>
-			<artifactId>model</artifactId>
+			<artifactId>af40-model</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.next-level-integration</groupId>
+			<artifactId>af40-backend-services</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -34,24 +37,6 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<!-- end::actuator[] -->
-		<!-- tag::tests[] -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<!-- end::tests[] -->
-
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-collections4</artifactId>
-			<version>4.1</version>
-		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>org.postgresql</groupId> -->
-		<!-- <artifactId>postgresql</artifactId> -->
-		<!-- <version>9.4.1209</version> -->
-		<!-- </dependency> -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -71,17 +56,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<artifactId>maven-failsafe-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>integration-test</goal>
-							<goal>verify</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
