@@ -20,7 +20,7 @@ spec:
           initialDelaySeconds: 10
           timeoutSeconds: 5
         ports:
-        - name: fast4-srv-http
+        - name: fast4-dbp-http
           containerPort: 8081
       - name: fast4-web
         image: eu.gcr.io/GCP_PROJECT/APP_NAME:1.0.0-web
@@ -31,5 +31,5 @@ spec:
           initialDelaySeconds: 10
           timeoutSeconds: 5
         ports:
-        - name: fast4-web-http
+        - name: web-http
           containerPort: 8080
