@@ -6,25 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.nextlevel.fast.track.backend.business.partner.service.BusinessPartnerService;
-import com.nextlevel.fast.track.model.business.partner.BusinessPartner;
+import com.nextlevel.fast.track.backend.business.partner.service.AbstractBusinessPartnerService;
+import com.nextlevel.fast.track.model.business.partner.AbstractBusinessPartner;
 
-@RestController
 @RequestMapping("/businessPartner")
-public class BusinessPartnerBackendController {
+public class AbstractBusinessPartnerBackendController<T extends AbstractBusinessPartner> {
 	
 	@Autowired
-	private BusinessPartnerService service;
+	private AbstractBusinessPartnerService<T> service;
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public BusinessPartner createBusinessPartner(@RequestBody BusinessPartner businessPartner) {
+	public AbstractBusinessPartner createBusinessPartner(@RequestBody T businessPartner) {
 		return service.save(businessPartner);
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public List<BusinessPartner> getBusinessPartners() {
+	public List<T> getBusinessPartners() {
 		return service.findAllBusinessPartner();
 	}
 

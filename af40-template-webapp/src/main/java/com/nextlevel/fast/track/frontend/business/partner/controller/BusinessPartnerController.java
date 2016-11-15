@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nextlevel.fast.track.frontend.business.partner.service.BusinessPartnerService;
+import com.nextlevel.fast.track.model.business.partner.AbstractBusinessPartner;
 import com.nextlevel.fast.track.model.business.partner.BusinessPartner;
 
 @RestController
