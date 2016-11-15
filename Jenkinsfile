@@ -23,7 +23,7 @@ node('build-slave') {
     sh "mvn package"
 
     stage 'Bake Docker Image'
-    sh("docker build -t ${imageTag}-src af40-backend-webapp")
+    sh("docker build -t ${imageTag}-srv af40-backend-webapp")
     sh("docker build -t ${imageTag}-web af40-template-webapp")
 
     stage 'Push images to GCR'
