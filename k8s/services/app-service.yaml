@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: app3-service
+  name: fast4-service
   labels:
-    app: app3-service
+    app: fast4-service
 spec:
   type: LoadBalancer
   ports:
     - port: 80
-      name: app3-http
+      name: fast4-web-http
       targetPort: 8080
       protocol: TCP
   selector:
-    name: app3
+    name: fast4-web
