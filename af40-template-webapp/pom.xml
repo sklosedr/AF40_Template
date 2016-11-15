@@ -163,9 +163,9 @@
 
 		<profile>
 			<id>prod</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
+<!--             <activation> -->
+<!--                 <activeByDefault>true</activeByDefault> -->
+<!--             </activation> -->
 			<dependencies>
 				<dependency>
 					<groupId>org.springframework.boot</groupId>

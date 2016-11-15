@@ -2,7 +2,7 @@ node('build-slave') {
 
     // Project name will be passed in as a parameter
     def project = "${GCP_PROJECT_NAME}"
-    def appName = 'app3'
+    def appName = 'fast4'
 
     // BUILD_DATE_TIME defined as a build parameter in Jenkins
     def imageTag = "eu.gcr.io/${project}/${appName}:${BUILD_DATE_TIME}"
@@ -23,12 +23,14 @@ node('build-slave') {
     sh "mvn package"
 
     stage 'Bake Docker Image'
-    sh("docker build -t ${imageTag} .")
+    sh("docker build -t ${imageTag}-src af40-backend-webapp")
+    sh("docker build -t ${imageTag}-web af40-template-webapp")
 
     stage 'Push images to GCR'
     sh("gcloud auth activate-service-account --key-file /opt/config/gcloud-svc-account.json")
     sh("gcloud config set project ${project}")
-    sh("gcloud docker push ${imageTag}")
+    sh("gcloud docker push ${imageTag}-srv")
+    sh("gcloud docker push ${imageTag}-web")
 
     stage 'Deploy latest version'
     sh("sed -i.bak 's#eu.gcr.io/GCP_PROJECT/APP_NAME:1.0.0#${imageTag}#' ./k8s/deployments/app-deployment.yaml")

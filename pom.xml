@@ -20,6 +20,7 @@
 
 	<modules>
 		<module>af40-template-webapp</module>
+		<module>af40-backend-webapp</module>
 	</modules>
 
 </project>
