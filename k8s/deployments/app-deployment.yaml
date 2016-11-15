@@ -11,8 +11,8 @@ spec:
         name: fast4
     spec:
       containers:
-      - name: fast4-srv
-        image: eu.gcr.io/GCP_PROJECT/APP_NAME:1.0.0-srv
+      - name: fast4-dbp
+        image: eu.gcr.io/GCP_PROJECT/APP_NAME:1.0.0-dbp
         imagePullPolicy: Always
         readinessProbe:
           tcpSocket:
