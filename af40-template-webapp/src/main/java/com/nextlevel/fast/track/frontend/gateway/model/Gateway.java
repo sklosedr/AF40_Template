@@ -1,6 +1,6 @@
 package com.nextlevel.fast.track.frontend.gateway.model;
 
-import com.nextlevel.fast.track.frontend.model.AdditionalAddressInformation;
+import com.nextlevel.fast.track.model.address.AdditionalAddressInformation;
 
 public class Gateway {
 	

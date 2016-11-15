@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nextlevel.fast.track.frontend.connection.object.service.ConnectionObjectService;
-import com.nextlevel.fast.track.frontend.model.Address;
+import com.nextlevel.fast.track.model.address.Address;
 
 @RestController
 @RequestMapping("/connectionObject")

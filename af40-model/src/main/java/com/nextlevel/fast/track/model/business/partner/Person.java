@@ -1,9 +1,20 @@
-package com.nextlevel.fast.track.frontend.business.partner.model;
+package com.nextlevel.fast.track.model.business.partner;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Person {
 	
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long personId;
 	
+	@Enumerated(EnumType.STRING)
 	private Salutation salutation;
 	
 	private String firstName;

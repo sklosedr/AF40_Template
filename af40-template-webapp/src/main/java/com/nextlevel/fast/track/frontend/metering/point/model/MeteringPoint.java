@@ -1,7 +1,7 @@
 package com.nextlevel.fast.track.frontend.metering.point.model;
 
-import com.nextlevel.fast.track.frontend.model.AdditionalAddressInformation;
-import com.nextlevel.fast.track.frontend.model.Address;
+import com.nextlevel.fast.track.model.address.AdditionalAddressInformation;
+import com.nextlevel.fast.track.model.address.Address;
 
 public class MeteringPoint {
 	

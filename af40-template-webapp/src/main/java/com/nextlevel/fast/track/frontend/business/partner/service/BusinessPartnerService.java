@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.nextlevel.fast.track.frontend.business.partner.model.BusinessPartner;
+import com.nextlevel.fast.track.model.business.partner.BusinessPartner;
+
 
 @Service
 public class BusinessPartnerService {

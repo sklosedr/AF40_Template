@@ -8,8 +8,8 @@ import org.apache.commons.collections4.IterableUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nextlevel.fast.track.backend.business.partner.model.BusinessPartner;
 import com.nextlevel.fast.track.backend.business.partner.repository.BusinessPartnerRepository;
+import com.nextlevel.fast.track.model.business.partner.BusinessPartner;
 
 @Service
 public class BusinessPartnerService {

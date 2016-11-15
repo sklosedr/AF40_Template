@@ -1,4 +1,4 @@
-package com.nextlevel.fast.track.frontend.model;
+package com.nextlevel.fast.track.model.address;
 
 public class AdditionalAddressInformation {
 	

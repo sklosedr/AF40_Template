@@ -1,7 +1,15 @@
-package com.nextlevel.fast.track.frontend.model;
+package com.nextlevel.fast.track.model.address;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Address {
 	
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long addressId;
 	private String street;
 	private String streetNumber;

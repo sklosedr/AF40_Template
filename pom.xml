@@ -17,8 +17,22 @@
         <version>1.4.1.RELEASE</version>
     </parent>
 
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.next-level-integration</groupId>
+				<artifactId>model</artifactId>
+				<version>1.0.0</version>			
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<modules>
+		<module>af40-model</module>
 		<module>af40-template-webapp</module>
 		<module>af40-backend-webapp</module>
 	</modules>

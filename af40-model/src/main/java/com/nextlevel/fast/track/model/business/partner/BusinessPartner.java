@@ -1,19 +1,33 @@
-package com.nextlevel.fast.track.frontend.business.partner.model;
+package com.nextlevel.fast.track.model.business.partner;
 
-import com.nextlevel.fast.track.frontend.model.Address;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
+import com.nextlevel.fast.track.model.address.Address;
+
+@Entity
 public class BusinessPartner {
 	
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long businessPartnerId;
 	
 	private String company;
 	
 	private String phone;
 	
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Person person;
 	
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Person contactPerson;
 	
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Address address;
 
 	public Long getBusinessPartnerId() {

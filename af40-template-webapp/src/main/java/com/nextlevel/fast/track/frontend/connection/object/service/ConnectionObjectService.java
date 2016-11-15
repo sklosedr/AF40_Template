@@ -9,7 +9,8 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Service;
 
-import com.nextlevel.fast.track.frontend.model.Address;
+import com.nextlevel.fast.track.model.address.Address;
+
 
 @Service
 public class ConnectionObjectService {
