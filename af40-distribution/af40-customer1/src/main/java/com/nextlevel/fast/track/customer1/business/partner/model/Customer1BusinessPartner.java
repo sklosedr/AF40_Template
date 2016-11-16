@@ -1,4 +1,4 @@
-package com.nextlevel.fast.track.customer1.backend.model;
+package com.nextlevel.fast.track.customer1.business.partner.model;
 
 import javax.persistence.Entity;
 

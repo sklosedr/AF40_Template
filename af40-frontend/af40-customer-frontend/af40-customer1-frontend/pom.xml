@@ -19,6 +19,10 @@
 		</dependency>
 		<dependency>
 			<groupId>com.next-level-integration</groupId>
+			<artifactId>af40-customer1</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.next-level-integration</groupId>
 			<artifactId>af40-frontend-services</artifactId>
 		</dependency>
 		<dependency>
