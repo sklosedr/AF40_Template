@@ -23,14 +23,14 @@ node('build-slave') {
     sh "mvn package"
 
     stage 'Bake Docker Image'
-    sh("docker build -t ${imageTag}-dbp af40-backend/af40-customer-backend/af40-nli-backend")
-    sh("docker build -t ${imageTag}-web af40-template-webapp")
+    sh("docker build -t ${imageTag}-nb af40-backend/af40-customer-backend/af40-nli-backend")
+    sh("docker build -t ${imageTag}-pf af40-frontend/af40-customer-frontend/af40-portal-frontend")
 
     stage 'Push images to GCR'
     sh("gcloud auth activate-service-account --key-file /opt/config/gcloud-svc-account.json")
     sh("gcloud config set project ${project}")
-    sh("gcloud docker push ${imageTag}-dbp")
-    sh("gcloud docker push ${imageTag}-web")
+    sh("gcloud docker push ${imageTag}-nb")
+    sh("gcloud docker push ${imageTag}-pf")
 
     stage 'Deploy latest version'
     sh("sed -i.bak 's#eu.gcr.io/GCP_PROJECT/APP_NAME:1.0.0#${imageTag}#' ./k8s/deployments/app-deployment.yaml")

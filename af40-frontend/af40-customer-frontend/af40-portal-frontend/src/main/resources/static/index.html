@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de" >
+<head>
+	<meta charset="utf-8"> 
+    <title>FastTrack UI - Demo Template</title>
+    
+   
+    
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.9/angular-material.min.css">
+	<link rel="stylesheet" href="bower_components/material-steppers/dist/material-steppers.min.css "/>
+	<link rel="stylesheet" href="css/app.css"/>
+	<style type="text/css">
+	[ng\:cloak], [ng-cloak], .ng-cloak {
+		display: none !important;
+	}
+	</style>
+	<script>document.write('<base href="' + document.location + '" />');</script>
+</head>
+
+	<body ng-app="fastTrackApp" style="background-color: #EEE;">
+		<div ng-view class="container"></div>
+	</body>
+
+	 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt3-wZwtcGPb6WYadkN47VYwbN_BXYbu0&sensor=false" type="text/javascript"></script>
+	
+	<!-- build:js app/app.js  -->
+    <!-- inject:js -->
+    <script src="js/vendor.min.js"></script>
+    <script src="js/app.min.js"></script>
+    <script src="app/wizard/wizard.controller.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<md-dialog aria-label="List dialog" ng-controller="BusinessPartnerController as vm" >
+<md-dialog-content>
+
+	<form name="businessPartnerForm">
+            <md-stepper id="businessPartnerStepper">
+<!--              
+                        md-mobile-step-text="$ctrl.isMobileStepText"
+                        md-vertical="$ctrl.isVertical"
+                        md-linear="$ctrl.isLinear"
+                        md-alternative="$ctrl.isAlternative"
+-->
+			
+				<md-step md-label="Namen angeben">
+					<md-step-body>
+						<h3>Wer ist der Geschäftspartner?</h3>
+						<p>Rechtsform</p>
+						<md-radio-group ng-model="vm.formOfOrganisation" layout="row">
+							<md-radio-button value="person" class="md-primary">Privatperson</md-radio-button>
+							<md-radio-button value="company" class="md-primary">Unternehmen</md-radio-button>
+						</md-radio-group>
+						<div ng-show="vm.isPerson()">
+							<p>Anrede</p>
+							<md-radio-group ng-model="vm.businessPartner.person.salutation" layout="row">
+								<md-radio-button value="MS" class="md-primary" ng-model="vm.isPerson">Frau</md-radio-button>
+								<md-radio-button value="MR" class="md-primary" ng-model="vm.isCompany">Herr</md-radio-button>
+							</md-radio-group>
+							<div layout="row" flex class="margin-top">
+								<md-input-container>
+									<label class="md-no-float">Vorname</label>
+									<input ng-model="vm.businessPartner.person.firstName" required md-minlength="1" type="text">
+								</md-input-container>
+								<md-input-container>
+									<label class="md-no-float">Nachname</label>
+									<input ng-model="vm.businessPartner.person.lastName" required md-minlength="1" type="text">
+								</md-input-container>
+							</div>
+						</div>
+						<div ng-show="vm.isCompany()" class="margin-top">
+							<md-input-container>
+								<label class="md-no-float">Name</label>
+								<input ng-model="vm.businessPartner.company" required md-minlength="1" type="text">
+							</md-input-container>
+						</div>
+						<md-input-container>
+							<label class="md-no-float">Geschäftspartnernummer (Optional)</label>
+							<input ng-model="vm.businessPartner.phone" type="text">
+						</md-input-container>
+					</md-step-body>
+					<md-step-actions layout="row" layout-align="space-between">
+						<md-button class="" ng-click="closeDialog()">Abbrechen</md-button>
+						<md-button class="md-primary md-raised" ng-click="vm.forward()">Weiter</md-button>
+					</md-step-actions>
+				</md-step>
+				
+				<md-step md-label="Adresse angeben">
+					<md-step-body>
+						<h3>Wie lautet die Postanschrift des Geschäftspartners?</h3>
+						<div layout="row" flex>
+							<md-input-container class="flex">
+								<label class="md-no-float">Straße</label>
+								<input ng-model="vm.businessPartner.address.street" required md-minlength="1" type="text">
+							</md-input-container>
+							<md-input-container class="flex-30">
+								<label class="md-no-float">Hausnummer</label>
+								<input ng-model="vm.businessPartner.address.streetNumber" required md-minlength="1" type="text">
+							</md-input-container>
+						</div>
+						<div layout="row" flex>
+							<md-input-container class="flex-30">
+								<label class="md-no-float">PLZ</label>
+								<input ng-model="vm.businessPartner.address.zipCode" required md-minlength="1" type="text">
+							</md-input-container>
+							<md-input-container class="flex">
+								<label class="md-no-float">Ort</label>
+								<input ng-model="vm.businessPartner.address.city" required md-minlength="1" type="text">
+							</md-input-container>						
+						</div>
+						<div layout="row" flex>
+							<md-input-container>
+								<label class="md-no-float">Adresszusatz (Optional)</label>
+								<input ng-model="vm.businessPartner.address.extraAddressLine" type="text">
+							</md-input-container>
+						</div>
+							
+							
+					</md-step-body>
+					<md-step-actions layout="row" layout-align="space-between">
+						<md-button class="" ng-click="closeDialog()">Abbrechen</md-button>
+						<md-button-container>
+							<md-button class="" ng-click="vm.back()">Zurück</md-button>
+							<md-button class="md-primary md-raised" ng-click="vm.forward()">Weiter</md-button>
+						</md-button-container>
+					</md-step-actions>
+				</md-step>
+				
+				<md-step md-label="Eingaben prüfen">
+					<md-step-body>
+						<h3>Folgenden Geschäftspartner anlegen?</h3>
+						<label>{{ vm.businessPartner.company }}</label>
+						<label>{{ vm.businessPartner.person.firstName }} {{ vm.businessPartner.person.lastName }}</label>
+						<br />
+						<label>{{ vm.businessPartner.address.street }} {{ vm.businessPartner.address.streetNumber }}</label>
+						<label>{{ vm.businessPartner.address.zipCode }} {{ vm.businessPartner.address.city }}</label>
+					</md-step-body>
+					<md-step-actions layout="row" layout-align="space-between">
+						<md-button class="" ng-click="closeDialog()">Abbrechen</md-button>
+						<md-button-container>
+							<md-button class="" ng-click="vm.back()">Zurück</md-button>
+							<md-button class="md-primary md-raised" ng-click="vm.createBusinessPartner()">Anlegen</md-button>
+						</md-button-container>
+					</md-step-actions>
+				</md-step>
+			
+		</md-stepper>
+	</form>
+
+
+</md-dialog-content>
+</md-dialog>

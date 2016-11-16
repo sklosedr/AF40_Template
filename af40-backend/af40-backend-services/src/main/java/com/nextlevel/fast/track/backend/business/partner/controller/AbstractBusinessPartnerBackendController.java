@@ -11,7 +11,7 @@ import com.nextlevel.fast.track.backend.business.partner.service.AbstractBusines
 import com.nextlevel.fast.track.model.business.partner.AbstractBusinessPartner;
 
 @RequestMapping("/businessPartner")
-public class AbstractBusinessPartnerBackendController<T extends AbstractBusinessPartner> {
+public abstract class AbstractBusinessPartnerBackendController<T extends AbstractBusinessPartner> {
 	
 	@Autowired
 	private AbstractBusinessPartnerService<T> service;

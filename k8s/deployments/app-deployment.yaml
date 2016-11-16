@@ -11,8 +11,8 @@ spec:
         name: fast4
     spec:
       containers:
-      - name: fast4-dbp
-        image: eu.gcr.io/GCP_PROJECT/APP_NAME:1.0.0-dbp
+      - name: fast4-nb
+        image: eu.gcr.io/GCP_PROJECT/APP_NAME:1.0.0-nb
         imagePullPolicy: Always
         readinessProbe:
           tcpSocket:
@@ -20,10 +20,10 @@ spec:
           initialDelaySeconds: 10
           timeoutSeconds: 5
         ports:
-        - name: fast4-dbp-http
+        - name: nb-http
           containerPort: 8081
-      - name: fast4-web
-        image: eu.gcr.io/GCP_PROJECT/APP_NAME:1.0.0-web
+      - name: fast4-pf
+        image: eu.gcr.io/GCP_PROJECT/APP_NAME:1.0.0-pf
         imagePullPolicy: Always
         readinessProbe:
           tcpSocket:
@@ -31,5 +31,5 @@ spec:
           initialDelaySeconds: 10
           timeoutSeconds: 5
         ports:
-        - name: web-http
+        - name: pf-http
           containerPort: 8080

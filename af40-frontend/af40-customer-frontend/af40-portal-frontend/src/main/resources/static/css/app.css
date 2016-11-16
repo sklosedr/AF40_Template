@@ -1,0 +1,258 @@
+/*
+ * generic styles
+ */
+
+h3 {
+	color: #0288d1;
+}
+
+hr {
+	width: 100%;
+	height: 1px;
+	border: none;
+	background: #AAA;
+}
+
+
+
+p.textfield {
+	width: 800px;
+	margin-top: 0;
+}
+
+label.md-no-float {
+	font-size: 0.75rem;
+	left: 2px !important;
+	color: #444;
+}
+
+a.md-button.md-default-theme.md-primary.md-raised, a.md-button.md-primary.md-raised,
+	a.md-button.md-default-theme.md-primary.md-fab, a.md-button.md-primary.md-fab,
+	.md-button.md-default-theme.md-primary.md-raised, .md-button.md-primary.md-raised,
+	.md-button.md-default-theme.md-primary.md-fab, .md-button.md-primary.md-fab
+	{
+	color: rgba(255, 255, 255, 0.8);
+	font-weight: bold;
+}
+
+a.md-button.md-default-theme.md-primary.md-raised:not ([disabled] ):hover,
+	a.md-button.md-primary.md-raised:not ([disabled] ):hover, a.md-button.md-default-theme.md-primary.md-fab:not
+	 ([disabled] ):hover, a.md-button.md-primary.md-fab:not ([disabled] ):hover,
+	.md-button.md-default-theme.md-primary.md-raised:not ([disabled] ):hover,
+	.md-button.md-primary.md-raised:not ([disabled] ):hover, .md-button.md-default-theme.md-primary.md-fab:not
+	 ([disabled] ):hover, .md-button.md-primary.md-fab:not ([disabled] ):hover
+	{
+	background-color: #ff6f00;
+}
+
+
+
+md-content {
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+}
+
+md-card {
+	height: 95%;
+}
+
+md-step-body {
+	padding: 1rem;
+}
+
+md-autocomplete input:not(.md-input) {
+	padding: 0 2px 0 2px;
+}
+
+md-steppers-header button {
+	font-family: Roboto-medium;	
+}
+
+
+
+.margin-top {
+	margin-top: 1rem;
+}
+
+.nli-header-1 {
+	font-size: 1.5rem;
+	padding: 2rem;
+	color: #0288d1;
+}
+
+.radio-in-list {
+	margin-bottom: 0px !important;
+}
+
+.md-select-menu-container md-content {
+	background-color: #FFF;
+}
+
+.no-margin-bottom {
+	margin-bottom: 0;
+}
+
+.md-active .md-stepper-title span {
+    font-weight: 600;
+}
+
+.md-button {
+	font-weight: 600;
+}
+
+.container.ng-scope {
+	background-color: #EEEEEE;
+}
+
+
+/* Sticky Footer */
+.site {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.site-header, .site-footer {
+	flex: none;
+}
+
+.site-content {
+	flex: 1 0 auto;
+	padding: 0 2rem;
+	width: 100%;
+}
+
+.site-content::after {
+	content: '\00a0';
+	display: block;
+	margin-top: 0;
+	height: 0px;
+	visibility: hidden;
+}
+
+:focus {
+	outline: none;
+}
+
+@media screen and (max-device-width: 1300px) and (-webkit-min-device-pixel-ratio:0) {
+	md-steppers-header button {
+		width:200px;
+	}
+}
+
+
+
+
+
+
+/* 
+ * wizard metering point
+ */
+
+#meteringPointStepper .md-checked {
+	background-color: #F4F4F4;
+}
+
+#meteringPointStepper md-autocomplete input:focus {
+	border-bottom: 2px solid rgb(255,152,0);
+}
+
+#meteringPointStepper md-autocomplete-wrap {
+	box-shadow: none;
+}
+
+#meteringPointStepper md-step-body {
+	min-height: 470px;
+}
+
+#gatewayRadioGroup {
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+
+
+.gateway-input md-input-container {
+	margin-left: 30px;
+	width: 350px;
+	margin-bottom: 0;
+}
+
+.gateway-hover:hover {
+	background-color: #F4F4F4;
+}
+
+.angular-google-map-container {
+	height: 300px;
+}
+
+.gateway-list span {
+	position: relative;
+	top: -10px;
+	color: #777;
+}
+
+.gateway-list img {
+	margin-right: 0.5rem;
+	width: 32px;
+	height: 32px;
+}
+
+
+@media screen and (max-device-height: 1300px) and (-webkit-min-device-pixel-ratio:0) {
+	md-steppers-header button {
+		width:200px;
+	}
+	
+	#meteringPointStepper md-step-body {
+		min-height: 442px;
+	}
+	
+	#gatewayRadioGroup {
+		max-height: 279px;
+		overflow-y: auto;
+	}
+}
+
+
+/* 
+ * wizard business partner
+ */
+
+
+#businessPartnerStepper md-step-body {
+	min-height: 400px;
+}
+
+#businessPartnerStepper md-step-actions, #meteringPointStepper md-step-actions
+	{
+	padding: 1rem;
+}
+
+
+
+
+/*
+ * other styles
+ */ 
+
+.footer-login {
+	background-color: #0288d1;
+	height: 75px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.footer-wizard {
+	background-color: #0288d1;
+	height: 75px;
+	width: 100%;
+}
+
+.user-option {
+	position: absolute;
+	right: 0;
+	margin-top: 0;
+}

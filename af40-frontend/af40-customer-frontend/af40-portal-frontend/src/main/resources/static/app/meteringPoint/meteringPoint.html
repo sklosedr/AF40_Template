@@ -1,0 +1,208 @@
+<md-dialog aria-label="List dialog"	ng-controller="MeteringPointController as vm" style="height:700px; width:850px;">
+	<md-dialog-content style="overflow:hidden;">
+
+		<form name="meteringPointForm">
+			<md-stepper id="meteringPointStepper" class="ng-cloak"
+				md-mobile-step-text="true"
+				md-vertical="false" 
+				md-linear="true"
+ 				class="md-steppers-alternative">
+<!-- 				md-alternative="$ctrl.isAlternative" -->
+				
+				<md-step md-label="Messstelle beschreiben">
+					<md-step-body>
+						<h3>Welche Messstelle möchten Sie beschreiben?</h3>
+						<md-input-container >
+							<label class="md-no-float">Zählpunktbezeichnung</label>
+							<input ng-model="vm.meteringPoint.meteringPointDescription" name="meteringPointDescription" required md-minlength="1" type="text">
+							<div ng-messages="meteringPointForm.meteringPointDescription.$invalid" role="alert">
+								<div ng-if="meteringPointForm.meteringPointDescription.$dirty && meteringPointForm.meteringPointDescription.$invalid">
+  								<div ng-message="required">Dieses Feld darf nicht leer sein</div>
+  								</div>
+							</div>
+						</md-input-container>
+						<md-input-container >
+							<label class="md-no-float">Interne Bezeichnung (Optional)</label>
+							<input ng-model="vm.meteringPoint.internalDescription" type="text">
+						</md-input-container>
+					</md-step-body>
+					<md-step-actions layout="row" layout-align="space-between">
+						<md-button type="button" ng-click="closeDialog()">Abbrechen</md-button>
+						<md-button type="button" class="md-primary md-raised" ng-click="vm.forward()">Weiter</md-button>
+					</md-step-actions>
+				</md-step>
+				
+				<md-step md-label="Einbauort auswählen">
+					<md-step-body>
+						<h3>Wo befindet sich die Messstelle?</h3>
+						<md-content style="margin-bottom:42px;">
+							<label class="md-no-float">Einbauort</label>
+							<md-autocomplete
+					          ng-disabled="vm.isDisabled"
+					          md-no-cache="vm.noCache"
+					          md-selected-item="vm.selectedItem"
+					          md-search-text-change="vm.searchTextChange(vm.searchText)"
+					          md-search-text="vm.searchText"
+					          md-selected-item-change="vm.selectedItemChange(item)"
+					          md-items="item in vm.querySearch(vm.searchText)"
+					          md-item-text="item.display"
+					          required
+					          maxlength="4"
+					          name="addressAutocomplete"
+					          md-min-length="2"
+					          placeholder=""
+					          style="border-bottom:1px solid #DDD;background:none;">
+					        <md-item-template>
+					        	<span md-highlight-text="vm.searchText" md-highlight-flags="^i">{{item.display}}</span>
+					        </md-item-template>
+					        <md-not-found>
+								Es wurde kein Anschlussobjekt zur Adresse "{{vm.searchText}}" gefunden.
+					        </md-not-found>
+					      </md-autocomplete>						
+							<div ng-messages="vm.isSearchAddressInvalid()" role="alert">
+								<div ng-if="vm.isSearchAddressInvalid()">
+  								<div style="color: red; font-size:small" ng-message="maxlength">Ein Einbauort muss ausgewählt sein</div>
+  								</div>
+							</div>		
+						</md-content>
+						<md-input-container >
+							<label class="md-no-float">Gebäude (Optional)</label>
+							<input ng-model="vm.meteringPoint.additionalAddressInformation.building" type="text">
+						</md-input-container>
+						<md-input-container >
+							<label class="md-no-float">Stockwerk (Optional)</label>
+							<input ng-model="vm.meteringPoint.additionalAddressInformation.floor" type="text">
+						</md-input-container>
+						<md-input-container >
+							<label class="md-no-float">Raum (Optional)</label>
+							<input ng-model="vm.meteringPoint.additionalAddressInformation.room" type="text">
+						</md-input-container>
+					</md-step-body>
+					<md-step-actions layout="row" layout-align="space-between">
+						<md-button type="button" ng-click="closeDialog()">Abbrechen</md-button>
+						<md-button-container>
+							<md-button type="button" ng-click="vm.back()">Zurück</md-button>
+							<md-button type="button" class="md-primary md-raised" ng-click="vm.forward()">Weiter</md-button>
+						</md-button-container>
+					</md-step-actions>
+				</md-step>
+				
+				
+				<md-step md-label="Mit Gateway verbinden">
+					<md-step-body>
+						<h3>Mit welchem Gateway soll die Messstelle verbunden werden?</h3>
+					
+						<div ng-switch on="vm.existsGatewaysForAddress()">
+							<div ng-switch-when="true">
+								<p class="textfield">An dem Anschlussobjekt gibt es bereits Messstellen, die mit den unten aufgeführten Smart Meter Gateways verbunden sind.
+								Verbinden Sie die neue Messstelle mit einem der bestehenden Gateways oder geben Sie die Bezeichnung eines neuen Gateways ein,
+								mit dem die Messstelle verbunden werden soll:</p>
+								<hr />
+								
+								<div id="gatewayRadioGroup">
+								<md-radio-group ng-model="vm.meteringPoint.gatewayId">
+									<div flex class="row gateway-hover" layout='column' layout-padding layout-align="start left">
+										<md-radio-button flex ng-value="vm.newGatewayId" ng-model="vm.meteringPoint.gatewayId" ng-click="vm.createNewGateway()" class="md-primary" >
+											Messstelle mit einem neuen Gateway verbinden
+									    </md-radio-button>
+									    <div layout="row" class="row gateway-input" ng-show="vm.isNewGateway" flex>
+											<md-input-container>
+												<label class="md-no-float">GatewayID</label>
+												<input ng-model="vm.newGatewayId" required md-minlength="1" type="text" ng-change="vm.newGatewayIdChanged()" class="gatewag-id-input" style="background-color:#FFF;">
+											</md-input-container>
+									    </div>
+									</div>
+									<div ng-repeat='gateway in vm.gateways' class="row gateway-hover">
+										<div flex layout='row' layout-padding layout-align="start center" >
+		
+								          <md-radio-button flex ng-value="gateway.gatewayId" class="md-primary no-margin-bottom" ng-click="vm.useExistingGateway()">
+								          	{{ gateway.gatewayId }}
+								          </md-radio-button>
+		
+								          <div flex style="max-width:350px;" class="gateway-list">
+											<span>{{ gateway.numberOfPowerConnections }}x</span>
+											<img src='assets/icons/power-{{ vm.hasInactiveConections(gateway.numberOfPowerConnections) }}active.svg' class="md-avatar" alt="Elektrizität">
+											<span>{{ gateway.numberOfGasConnections }}x</span>
+											<img src="assets/icons/gas-{{ vm.hasInactiveConections(gateway.numberOfGasConnections) }}active.svg" class="md-avatar" alt="Gas">
+											<span>{{ gateway.numberOfWaterConnections }}x</span>
+											<img src="assets/icons/water-{{ vm.hasInactiveConections(gateway.numberOfWaterConnections) }}active.svg" class="md-avatar" alt="Wasser">
+											<span>{{ gateway.numberOfHeatConnections }}x</span>
+											<img src="assets/icons/heat-{{ vm.hasInactiveConections(gateway.numberOfHeatConnections) }}active.svg" class="md-avatar" alt="Wärme">
+								          </div>
+										</div>
+									</div>
+								</md-radio-group>
+								</div>
+								<hr />
+							</div>
+						
+							<div ng-switch-when="false">
+								<p class="textfield" style="padding-bottom:10px">An dem Anschlussobjekt gibt es noch keine Messstellen, die mit einem Smart Meter Gateway verbunden sind. Geben Sie die Bezeichnung des Gateways ein, mit dem die neue Messstelle verbunden werden soll:</p>
+								<md-input-container>
+									<label class="md-no-float">GatewayID</label>
+									<input ng-model="vm.newGatewayId" required md-minlength="1" type="text" ng-change="vm.newGatewayIdChanged()" class="gatewag-id-input" style="background-color:#FFF;">
+								</md-input-container>
+							</div>
+						</div>										
+					</md-step-body>
+					<md-step-actions layout="row" layout-align="space-between">
+						<md-button type="button" ng-click="closeDialog()">Abbrechen</md-button>
+						<md-button-container>
+							<md-button type="button" ng-click="vm.back()">Zurück</md-button>
+							<md-button type="button" class="md-primary md-raised" ng-click="vm.forward()">Weiter</md-button>
+						</md-button-container>
+					</md-step-actions>
+				</md-step>
+				
+				
+				<md-step md-label="Eingaben prüfen">
+					<md-step-body>
+						<h3>Folgende Messstelle anlegen?</h3>
+						<h4>Messstelle</h4>
+						<div layout="row">
+						  <div flex>
+						  	<div layout="row">
+						  		<div flex>Zählpunktbez.:</div>
+						  		<div flex>{{ vm.meteringPoint.meteringPointDescription }}</div>
+						  	</div>
+						  	<div layout="row" class="margin-top">
+						  		<div flex>Interne Bezeichnung:</div>
+						  		<div flex>{{ vm.meteringPoint.internalDescription }}</div>
+						  	</div>
+						  	<h4>Einbauort:</h4>
+						  	<div layout="row" class="margin-top">
+						  		<div flex>{{ vm.selectedItem.street }} {{ vm.selectedItem.streetNumber }}</div>
+						  	</div>
+						  	<div layout="row" class="margin-top">
+						  		<div flex>{{ vm.showAdditionalAddressInformation(vm.meteringPoint.additionalAddressInformation) }}</div>
+						  	</div>
+						  	<div layout="row" class="margin-top">
+						  		<div flex>{{ vm.selectedItem.zipCode }} {{ vm.selectedItem.city }}</div>
+						  	</div>
+						  	<div layout="row" class="margin-top">
+						  		<div flex><b>Gateway-ID:</b></div>
+						  	</div>
+						  	<div layout="row" class="margin-top">
+						  		<div flex>{{ vm.meteringPoint.gatewayId }}</div>
+						  	</div>
+						  </div>
+						  <div flex>
+						  		<ui-gmap-google-map center='vm.map.center' zoom='vm.map.zoom'></ui-gmap-google-map>
+						  </div>
+						</div>
+					</md-step-body>
+					<md-step-actions layout="row" layout-align="space-between">
+						<md-button type="button" ng-click="closeDialog()">Abbrechen</md-button>
+						<md-button-container>
+							<md-button type="button" ng-click="vm.back()">Zurück</md-button>
+							<md-button type="button" class="md-primary md-raised" ng-click="vm.createMeteringPoint()">Anlegen</md-button>
+						</md-button-container>
+					</md-step-actions>
+				</md-step>
+				
+		
+				
+			</md-stepper>
+		</form>
+	</md-dialog-content>
+</md-dialog>

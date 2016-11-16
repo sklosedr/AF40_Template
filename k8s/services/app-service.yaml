@@ -8,8 +8,8 @@ spec:
   type: LoadBalancer
   ports:
     - port: 80
-      name: web-http
+      name: pf-http
       targetPort: 8080
       protocol: TCP
   selector:
-    app: fast4-web
+    app: fast4-pf
