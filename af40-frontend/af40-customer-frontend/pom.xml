@@ -15,8 +15,8 @@
     </parent>
 
 	<modules>
-		<module>af40-customer1-frontend</module>
 		<module>af40-portal-frontend</module>
+		<module>af40-customer1-frontend</module>
 	</modules>
 
 </project>
