@@ -9,7 +9,7 @@
     function stateConfig($routeProvider) {
     	$routeProvider
     		.when('/', {
-    			templateUrl: 'app/wizard/c_wizard.view.html',
+    			templateUrl: 'app/wizard/wizard.view.html',
         		controller: 'WizardController',
         		controllerAs: 'vm'
     		})

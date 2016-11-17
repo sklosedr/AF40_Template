@@ -16,6 +16,7 @@ module.exports = {
                 appConfig + 'service/auth.service.js',
                 appConfig + 'service/auth.session.service.js',
                 appConfig + 'service/principal.service.js',
+                appConfig + 'service/template.service.js',
                 
                 appConfig + 'login/login.controller.js',
                 
@@ -45,6 +46,7 @@ module.exports = {
               appConfig + 'service/auth.service.js',
               appConfig + 'service/auth.session.service.js',
               appConfig + 'service/principal.service.js',
+              appConfig + 'service/template.service.js',
               
               appConfig + 'login/login.controller.js',
               appConfig + 'wizard/wizard.controller.js',

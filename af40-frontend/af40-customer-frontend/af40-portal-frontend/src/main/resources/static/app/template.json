@@ -1,0 +1,42 @@
+{"main": {
+  "wizard": {
+    "cards": [
+      {
+      	"headline": "Messstelle anlegen",
+      	"subhead": "Anlage einer Messstelle und Zuordnung zu Mandant, Zählpunkt und SMGW.",
+      	"image": "assets/images/measuringPointCard.jpg",
+      	"template": "app/meteringPoint/meteringPoint.html"
+      },
+      {
+      	"headline": "Geschäftspartner anlegen",
+      	"subhead": "Erstellung von Geschäftspartnern, notwendig für die Einrichtung von Messstellen.",
+      	"image": "assets/images/businessPartnerCard.jpg",
+      	"template": "app/businessPartner/businessPartner.html"
+      },
+      {
+      	"headline": "Marktpartner anlegen",
+      	"subhead": "Anlage von Marktpartnern der Rolle Messstellenbetreiber oder Lieferant.",
+      	"image": "assets/images/marketPartnerCard.jpg",
+      	"template": ""
+      },
+      {
+      	"headline": "Anschlussobjekt pflegen",
+      	"subhead": "Notwendige und optionale Angaben für ein Anschlussobjekt.",
+      	"image": "assets/images/connectionObjectCard.jpg",
+      	"template": ""
+      },
+      {
+      	"headline": "Zähler anlegen",
+      	"subhead": "Erfassung der Stammdaten sowie Kommunikationseinstellungen des Zählers.",
+      	"image": "assets/images/counterCard.jpg",
+      	"template": ""
+      },
+      {
+      	"headline": "Tarif anlegen",
+      	"subhead": "Auswahl der Tarifart und spezifischer Einstellungen zur Erstellung eines Tarifs.",
+      	"image": "assets/images/rateCard.jpg",
+      	"template": ""
+      }
+    ]
+  }
+}}

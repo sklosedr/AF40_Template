@@ -27,18 +27,18 @@
 
             <md-grid-list md-cols-xs="1" md-cols-sm="1" md-cols-md="2" md-cols-lg="3" md-cols="3" md-row-height="1:1" md-gutter-sm="8px" md-gutter-md="8px" md-gutter-lg="8px">
 
-                <md-grid-tile>
+                <md-grid-tile ng-repeat='card in vm.getCards()'>
                     <md-content>
                         <md-card>
-                            <img src="assets/images/measuringPointCard.jpg">
+                            <img src='{{ card.image }}'>
                             <md-card-title>
                                 <md-card-title-text>
-                                    <span class="md-headline">Messstelle anlegen</span>
-                                    <span class="md-subhead">Anlage einer Messstelle und Zuordnung zu Mandant, Zählpunkt und SMGW.</span>
+                                    <span class="md-headline">{{ card.headline }}</span>
+                                    <span class="md-subhead">{{ card.subhead }}</span>
                                 </md-card-title-text>
                             </md-card-title>
                             <md-card-actions layout="row" layout-align="start center">
-                                <md-button class="md-primary" ng-click="vm.showPopupForm($event, 'app/meteringPoint/meteringPoint.html')">Prozess Starten</md-button>
+                                <md-button class="md-primary" ng-click="vm.showPopupForm($event, card.template)">Prozess Starten</md-button>
                                 <md-card-icon-actions>
                                     <md-button class="md-icon-button" aria-label="icon">
                                         <md-icon md-svg-icon="icon"></md-icon>
@@ -48,118 +48,6 @@
                         </md-card>
                     </md-content>
                 </md-grid-tile>
-
-                <md-grid-tile>
-                    <md-content>
-                        <md-card>
-                            <img src="assets/images/businessPartnerCard.jpg">
-                            <md-card-title>
-                                <md-card-title-text>
-                                    <span class="md-headline">Geschäftspartner anlegen</span>
-                                    <span class="md-subhead">Erstellung von Geschäftspartnern, notwendig für die Einrichtung von Messstellen.</span>
-                                </md-card-title-text>
-                            </md-card-title>
-                            <md-card-actions layout="row" layout-align="start center">
-                                <md-button class="md-primary" ng-click="vm.showPopupForm($event, 'app/businessPartner/businessPartner.html')">Prozess Starten</md-button>
-                                <md-card-icon-actions>
-                                    <md-button class="md-icon-button" aria-label="icon">
-                                        <md-icon md-svg-icon="icon"></md-icon>
-                                    </md-button>
-                                </md-card-icon-actions>
-                            </md-card-actions>
-                        </md-card>
-                    </md-content>
-                </md-grid-tile>
-
-                <md-grid-tile>
-                    <md-content>
-                        <md-card>
-                            <img src="assets/images/marketPartnerCard.jpg">
-                            <md-card-title>
-                                <md-card-title-text>
-                                    <span class="md-headline">Marktpartner anlegen</span>
-                                    <span class="md-subhead">Anlage von Marktpartnern der Rolle Messstellenbetreiber oder Lieferant.</span>
-                                </md-card-title-text>
-                            </md-card-title>
-                            <md-card-actions layout="row" layout-align="start center">
-                                <md-button >Prozess Starten</md-button>
-                                <md-card-icon-actions>
-                                    <md-button class="md-icon-button" aria-label="icon">
-                                        <md-icon md-svg-icon="icon"></md-icon>
-                                    </md-button>
-                                </md-card-icon-actions>
-                            </md-card-actions>
-                        </md-card>
-                    </md-content>
-                </md-grid-tile>
-
-                <md-grid-tile>
-                    <md-content>
-                        <md-card>
-                            <img src="assets/images/connectionObjectCard.jpg">
-                            <md-card-title>
-                                <md-card-title-text>
-                                    <span class="md-headline">Anschlussobjekt pflegen</span>
-                                    <span class="md-subhead">Notwendige und optionale Angaben für ein Anschlussobjekt.</span>
-                                </md-card-title-text>
-                            </md-card-title>
-                            <md-card-actions layout="row" layout-align="start center">
-                                <md-button >Prozess Starten</md-button>
-                                <md-card-icon-actions>
-                                    <md-button class="md-icon-button" aria-label="icon">
-                                        <md-icon md-svg-icon="icon"></md-icon>
-                                    </md-button>
-                                </md-card-icon-actions>
-                            </md-card-actions>
-                        </md-card>
-                    </md-content>
-                </md-grid-tile>
-
-                <md-grid-tile>
-                    <md-content>
-                        <md-card>
-                            <img src="assets/images/counterCard.jpg">
-                            <md-card-title>
-                                <md-card-title-text>
-                                    <span class="md-headline">Zähler anlegen</span>
-                                    <span class="md-subhead">Erfassung der Stammdaten sowie Kommunikationseinstellungen des Zählers.</span>
-                                </md-card-title-text>
-                            </md-card-title>
-                            <md-card-actions layout="row" layout-align="start center">
-                                <md-button >Prozess Starten</md-button>
-                                <md-card-icon-actions>
-                                    <md-button class="md-icon-button" aria-label="icon">
-                                        <md-icon md-svg-icon="icon"></md-icon>
-                                    </md-button>
-                                </md-card-icon-actions>
-                            </md-card-actions>
-                        </md-card>
-                    </md-content>
-                </md-grid-tile>
-
-
-                <md-grid-tile>
-                    <md-content>
-                        <md-card>
-                            <img src="assets/images/rateCard.jpg">
-                            <md-card-title>
-                                <md-card-title-text>
-                                    <span class="md-headline">Tarif anlegen</span>
-                                    <span class="md-subhead">Auswahl der Tarifart und spezifischer Einstellungen zur Erstellung eines Tarifs.</span>
-                                </md-card-title-text>
-                            </md-card-title>
-                            <md-card-actions layout="row" layout-align="start center">
-                                <md-button >Prozess Starten</md-button>
-                                <md-card-icon-actions>
-                                    <md-button class="md-icon-button" aria-label="icon">
-                                        <md-icon md-svg-icon="icon"></md-icon>
-                                    </md-button>
-                                </md-card-icon-actions>
-                            </md-card-actions>
-                        </md-card>
-                    </md-content>
-                </md-grid-tile>
-
             </md-grid-list>
 
         </div>
