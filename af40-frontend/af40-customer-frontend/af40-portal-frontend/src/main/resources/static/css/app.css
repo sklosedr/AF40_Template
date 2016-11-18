@@ -237,13 +237,6 @@ md-steppers-header button {
  * other styles
  */ 
 
-.footer-login {
-	background-color: #0288d1;
-	height: 75px;
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-}
 
 .footer-wizard {
 	background-color: #0288d1;

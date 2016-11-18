@@ -1,0 +1,12 @@
+.footer-login {
+	background-color: #0288d1;
+	height: 75px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.theme-header {
+	background-color: #0288d1;
+	height: 25px;
+}

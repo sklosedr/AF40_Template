@@ -53,8 +53,8 @@
 								<resource>
 									<directory>${basedir}/../af40-portal-frontend/src/main/resources/static/</directory>
 									<excludes>
-										<exclude>app/app.*.js</exclude>
 										<exclude>index.html</exclude>
+										<exclude>css/customize.css</exclude>
 									</excludes>
 								</resource>
 							</resources>
