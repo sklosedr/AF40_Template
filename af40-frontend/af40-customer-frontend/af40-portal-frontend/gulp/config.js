@@ -20,6 +20,8 @@ module.exports = {
                 
                 appConfig + 'login/login.controller.js',
                 
+                appConfig + 'wizard/wizard.controller.js',
+                
                 appConfig + 'businessPartner/businessPartner.controller.js',
                 appConfig + 'businessPartner/businessPartner.service.js',
                 
@@ -33,7 +35,7 @@ module.exports = {
     injectAppProd: [
               jsPathConfig + 'vendor.min.js',
               jsPathConfig + 'app.min.js',
-              appConfig + 'wizard/wizard.controller.js',
+              appConfig + 'wizard/wizard.directive.js',
                 ],
     injectAppDev: [
               jsPathConfig + 'vendor.min.js',
@@ -49,6 +51,7 @@ module.exports = {
               appConfig + 'service/template.service.js',
               
               appConfig + 'login/login.controller.js',
+              appConfig + 'wizard/wizard.directive.js',
               appConfig + 'wizard/wizard.controller.js',
               
               appConfig + 'businessPartner/businessPartner.controller.js',

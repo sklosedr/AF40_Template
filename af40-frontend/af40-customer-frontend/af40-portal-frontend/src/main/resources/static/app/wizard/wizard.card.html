@@ -1,0 +1,17 @@
+<md-card>
+	<img src='{{ card.image }}' />
+	<md-card-title>
+		<md-card-title-text>
+			<span class="md-headline">{{ card.headline }}</span>
+			<span class="md-subhead">{{ card.subhead }}</span>
+		</md-card-title-text>
+	</md-card-title>
+	<md-card-actions layout="row" layout-align="start center">
+		<md-button class="md-primary" ng-click="vm.showPopupForm($event, card.template)">Prozess Starten</md-button>
+		<md-card-icon-actions>
+			<md-button class="md-icon-button" aria-label="icon">
+				<md-icon md-svg-icon="icon"></md-icon>
+			</md-button>
+		</md-card-icon-actions>
+	</md-card-actions>
+</md-card>

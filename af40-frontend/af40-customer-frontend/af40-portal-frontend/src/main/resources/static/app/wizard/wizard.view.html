@@ -28,31 +28,12 @@
             <md-grid-list md-cols-xs="1" md-cols-sm="1" md-cols-md="2" md-cols-lg="3" md-cols="3" md-row-height="1:1" md-gutter-sm="8px" md-gutter-md="8px" md-gutter-lg="8px">
 
                 <md-grid-tile ng-repeat='card in vm.getCards()'>
-                    <md-content>
-                        <md-card>
-                            <img src='{{ card.image }}'>
-                            <md-card-title>
-                                <md-card-title-text>
-                                    <span class="md-headline">{{ card.headline }}</span>
-                                    <span class="md-subhead">{{ card.subhead }}</span>
-                                </md-card-title-text>
-                            </md-card-title>
-                            <md-card-actions layout="row" layout-align="start center">
-                                <md-button class="md-primary" ng-click="vm.showPopupForm($event, card.template)">Prozess Starten</md-button>
-                                <md-card-icon-actions>
-                                    <md-button class="md-icon-button" aria-label="icon">
-                                        <md-icon md-svg-icon="icon"></md-icon>
-                                    </md-button>
-                                </md-card-icon-actions>
-                            </md-card-actions>
-                        </md-card>
-                    </md-content>
+                	<md-content wizard-card card='card'></wizard-card>
                 </md-grid-tile>
             </md-grid-list>
 
         </div>
     </div>
 
-<!-- 	<div class="md-toast-content">&nbsp;</div> -->
     <md-layout layout="column" id="toastBounds" class="footer-wizard site-footer">&nbsp;</md-layout>
 </div>
